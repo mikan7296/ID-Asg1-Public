@@ -12,3 +12,4 @@ This project is a website aimed to provide the latest news and translation of a 
 
 ## Credits
 
+Home page inspired by https://onibe.moe/
