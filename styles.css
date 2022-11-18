@@ -60,6 +60,101 @@ a:visited {
     
 } */
 
+/*Banner*/
+
+#banner {
+    height: calc(100vh - 20px);
+
+    background-image: url("Media/Aqours_artist_photo.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+
+.banner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100%;
+    
+    font-size: 250%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+
+    backdrop-filter: blur(2px);
+
+}
+/* Body */
+
+#team-info {
+    width: 100%;
+    height:46vh;
+    
+}
+
+.team-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.team-info-logo {
+
+    display: flex;
+    justify-content: flex-end;
+    
+    width:40%;
+    height:40%
+}
+
+.team-info-logo * {
+    height: 100%;
+    padding-right:4%
+}
+
+
+.team-info-text {
+    width: 60%;
+    height: 40%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.team-info-text h1 {
+    margin:0;
+}
+
+.team-info-text p {
+    margin: 1em 0 0 0;
+    color: green;
+}
+
+.team-info-text div {
+    display:flex;
+    align-items: flex-end;
+    flex:1 1 100%;
+
+}
+
+.team-info-text div a {
+    padding: 1vh;
+    border-radius: 20px;
+
+    color: white;
+    background-color: black;
+}
+
 .active-header {
     background-color: greenyellow;
 }
