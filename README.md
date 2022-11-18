@@ -1,4 +1,4 @@
-#hello if you're reading this i'll do wireframe after i done my website, index.html & members.html has rough layout already + some css/js features already
+# hello if you're reading this i'll do wireframe after i done my website, index.html & members.html has rough layout already + some css/js features already
 
 # ID-Asg1-Public
 
