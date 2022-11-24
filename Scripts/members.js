@@ -91,6 +91,7 @@ azalea = [3, 4, 7];
 const animSpeed = 400;
 
 let width = $(window).width();
+
 $(window).resize(function() {
   width = $(window).width();;
 });
@@ -126,6 +127,61 @@ function scrollRight(pages) {
     debounce = false;
   }, animSpeed*1.5);
 }
+
+function calculateAge(birthday) {
+  var age = new Date().getFullYear() - new Date(birthday).getFullYear();
+  return age;
+}
+
+function updateActiveButtons() {
+  $("#buttons button").removeClass("active");
+  if (slidePosition == 1) {
+    $("#left-button").addClass('active');
+  }
+  else if (slidePosition == 2) {
+    $("#middle-button").addClass('active');
+  }
+  else if (slidePosition == 3) {
+    $("#right-button").addClass('active');
+  }
+}
+
+function setLimit() {
+  if (slidePosition > 3) {
+    slidePosition--;
+  }
+  else if (slidePosition < 1) {
+    slidePosition++;
+  }
+}
+
+function animateSubunit() {
+  let percent = 0
+  if (currentSubunit == cyaron) {percent = "0%"}
+  else if (currentSubunit == guilty_kiss) {percent = "33%"}
+  else if (currentSubunit == azalea) {percent = "66%"}
+  $('#subunit-background').css('left',percent);
+}
+
+function changeSlides() {
+  for (let i = 0; i <= 2; i++) {
+    member = members[currentSubunit[i]]
+
+    $(`#${i}_name`).text(member.name);
+    $(`#${i}_birthday`).text(`${member.birthday}, ${calculateAge(member.birthday)}`);
+    $(`#${i}_biography`).text(member.character);
+    $(`#${i}_image`).attr('src', member.img);
+  }
+}
+
+function changeSubunit(subunit) {
+  currentSubunit = subunit;
+  scrollLeft(Infinity);
+  slidePosition=1;
+  changeSlides();
+  updateActiveButtons();
+  animateSubunit();
+} 
 
 $('#left-button').click(function(){
   if (slidePosition == 2) {
@@ -164,82 +220,8 @@ $('#next-button').click(function(){
 });
 
 
-function changeSubunit(subunit) {
-  currentSubunit = subunit;
-  scrollLeft(Infinity);
-  slidePosition=1;
-  changeSlides();
-  updateActiveButtons();
-  animateSubunit();
-  // updateActiveSubunit();
-
-
-} 
-
-function calculateAge(birthday) {
-  var age = new Date().getFullYear() - new Date(birthday).getFullYear();
-  return age;
-}
-
-function changeSlides() {
-  for (let i = 0; i <= 2; i++) {
-    member = members[currentSubunit[i]]
-
-    $(`#${i}_name`).text(member.name);
-    $(`#${i}_birthday`).text(`${member.birthday}, ${calculateAge(member.birthday)}`);
-    $(`#${i}_biography`).text(member.character);
-    $(`#${i}_image`).attr('src', member.img);
-  }
-}
-
-function updateActiveButtons() {
-  console.log(slidePosition)
-  $("#buttons button").removeClass("active");
-  if (slidePosition == 1) {
-    $("#left-button").addClass('active');
-  }
-  else if (slidePosition == 2) {
-    $("#middle-button").addClass('active');
-  }
-  else if (slidePosition == 3) {
-    $("#right-button").addClass('active');
-  }
-}
-
-// function updateActiveSubunit() {
-//   $(".members-group-container div").removeClass("active");
-//   if (currentSubunit == cyaron) {
-//     $("#cyaron").addClass('active');
-//   }
-//   else if (currentSubunit == guilty_kiss) {
-//     $("#guilty_kiss").addClass('active');
-//   }
-//   else if (currentSubunit == azalea) {
-//     $("#azalea").addClass('active');
-//   }
-// }
-
-function animateSubunit() {
-  let percent = 0
-  if (currentSubunit == cyaron) {percent = "0%"}
-  else if (currentSubunit == guilty_kiss) {percent = "33%"}
-  else if (currentSubunit == azalea) {percent = "66%"}
-  $('#subunit-background').css('left',percent);
-}
-
-function setLimit() {
-  if (slidePosition > 3) {
-    slidePosition--;
-  }
-  else if (slidePosition < 1) {
-    slidePosition++;
-  }
-}
-
 changeSlides()
 updateActiveButtons()
-// updateActiveSubunit()
-
 
 $("img").mousedown(function(){
   return false;

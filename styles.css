@@ -28,7 +28,7 @@ a:visited {
 }
 
 
-/* Navigation bar*/
+/* ALL - Navigation Bar*/
 #header {
 
     z-index: 100;
@@ -66,7 +66,7 @@ a:visited {
     
 } */
 
-/*Banner*/
+/* INDEX.HTML - Hero Image*/
 
 #banner {
     height: calc(100vh - 20px);
@@ -94,7 +94,7 @@ a:visited {
     backdrop-filter: blur(2px);
 
 }
-/* Body */
+/* INDEX.HTML - Main Body */
 
 #team-info {
     width: 100%;
@@ -157,7 +157,7 @@ a:visited {
     background-color: black;
 }
 
-/* Newsfeed */
+/* INDEX.HTML - News feed */
 
 #newsfeed {
     width: 100%;
@@ -180,7 +180,7 @@ a:visited {
     align-items: center;
 }
 
-/* Subunit */
+/* MEMBERS.HTML Subunit picker  */
 
 #members-group {
     width: 100%;
@@ -208,10 +208,6 @@ a:visited {
     height: 100%;
 }
 
-/* .members-group-section.active {
-    background-color: grey;
-} */
-
 #subunit-background {
     background-color: rgb(155, 199, 238);
     height: 23vh;
@@ -226,6 +222,7 @@ a:visited {
     transition: all linear 0.2s;
 }
 
+/* MEMBERS.HTML - Members carousell */
 
 #members {
     width: 100%;
@@ -244,8 +241,6 @@ a:visited {
     font-size: 0;
     /* font-size:0 to get rid of spaces between inline-blocks, important.(setting bg-color here won't work i've tried) */
   }
-
-
 
 .slide{
     position: relative;
@@ -322,6 +317,8 @@ a:visited {
     flex:80%;
 }
 
+/* MEMBERS.HTML - Members carousell navigation buttons */
+
 #buttons {
     display: flex;
     background-color: beige;
@@ -368,7 +365,7 @@ a:visited {
 }
 
 
-
+/* not done yet */
 
 @media only screen and (max-width:920px) {
     .member-inner-container {
