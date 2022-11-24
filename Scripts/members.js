@@ -83,20 +83,33 @@ const members = [
       img: "Media/aqoursclub_cast_9.png",
     }
   ];
-  
-  function calculateAge(birthday) {
-    var age = new Date().getFullYear() - new Date(birthday).getFullYear();
-    return age;
-  }
-  
-  function changeMember(id) {
-    const member = members[id];
-    const age = calculateAge(member.birthday);
-    document.getElementById("members-profile-card").src = member.img;
-    document.getElementById("members-bio-name").innerHTML = member.name;
-    document.getElementById(
-      "members-bio-age"
-    ).innerHTML = `Birthday:${member.birthday} (${age})`;
-    document.getElementById("members-bio-about").innerHTML = member.nickname;
-  }
-  
+
+// Subunit members grouped by ID
+cyaron = [1, 5, 9];
+guilty_kiss = [2, 6, 8];
+azalea = [3, 4, 7];
+
+const animSpeed = 400;
+
+let width = $(window).width();
+$(window).resize(function() {
+  width = $(window).width();;
+});
+
+let slidePosition = 1;
+let currentSubunit = cyaron;
+
+let debounce = false;
+
+function changeSubunit(subunit) {
+  currentSubunit = subunit;
+  animateSubunit();
+}
+
+function animateSubunit() {
+  let percent = 0
+  if (currentSubunit == cyaron) {percent = "0%"}
+  else if (currentSubunit == guilty_kiss) {percent = "33%"}
+  else if (currentSubunit == azalea) {percent = "66%"}
+  $('#subunit-background').css('left',percent);
+}
