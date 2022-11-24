@@ -3,9 +3,6 @@
     
 }
 
-.active-header {
-    background-color: greenyellow;
-}
 
 html {
     max-width: 100%;
@@ -47,6 +44,11 @@ a:visited {
     top: 0;
 
     transition: background-color .5s linear;
+}
+
+
+#header.active-header {
+    background-color: greenyellow;
 }
 
 .navitem {
@@ -224,86 +226,152 @@ a:visited {
     transition: all linear 0.2s;
 }
 
-/* Members */
 
 #members {
-    background-color: palevioletred;
     width: 100%;
-    height:48vh
+    height: 46vh;
 }
 
-#members-container {
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.members-img {
-    height: 70%;
+#slides{  
     
-    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    white-space: nowrap;
+    font-size: 0;
+    /* font-size:0 to get rid of spaces between inline-blocks, important.(setting bg-color here won't work i've tried) */
+  }
+
+
+
+.slide{
+    position: relative;
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    background-color: beige;
+    font-size: 16px;
 }
 
-.members-img img {
+.member-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
+    height: 100%;
+
+}
+
+.member-inner-container {
+    width:60%;
+    height:70%;
+
+
+    border: 2px red solid;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-container-image , .member-container-bio {
     height: 100%;
 }
 
-.members-bio-container {
-    height: 70%;
-    width: 30%;
-    border: 1px solid blue;
+.member-container-image img{
+    height: 100%;
+}
+
+.member-container-bio {
+    flex: 1;
 
     display: flex;
     flex-direction: column;
 }
 
-#members-bio-name {
-    margin:0;
-    width: 100%;
-
-    background-color: blanchedalmond;
-    flex: 10%
+.member-container-bio * {
+    margin: 0;
 }
 
-#members-bio-age {
-    margin:0;
-    width: 100%;
+.member-name {
+    padding: 0 0 10px 0;
+    background-color: aliceblue;
 
-    background-color: burlywood;
-    flex: 10%
+    flex:10%;
 }
 
-#members-bio-about {
-    margin:0;
-    width: 100%;
+.member-birthday {
+    padding: 0 0 10px 0;
+    background-color: orange;
 
-    background-color: red;
-    flex: 70%
+    flex:10%;
 }
-.members-bio-button {
-    width: 100%;
 
-    background-color: aqua;
-    flex: 10%;
-    
+.member-biography {
+    margin:0;
+    background-color: rgb(80, 143, 199);
+
+    flex:80%;
+}
+
+#buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: beige;
 
+    justify-content: center;
+    
 }
 
-.members-bio-button button {
-    
-    background-color: powderblue;
+#buttons button {
+    background-color: pink;
+
     border:0;
     border-radius: 20px;
-    padding: 1vh;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    
+    padding: 1.5vh;
+    margin: -10px 20px 10px 20px;
 
+    z-index: 100;   
+}
+
+#buttons button.active {
+    background-color: red; 
+}
+
+#scroll-buttons {
+    display: flex;
+    height: 0;
+    justify-content: center;
+}
+
+#scroll-buttons-container {
+    display: flex;
+    height: 46vh;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
+#prev-button , #next-button{
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+}
+
+
+
+
+@media only screen and (max-width:920px) {
+    .member-inner-container {
+        width: 100%;
+    }
+}
