@@ -203,6 +203,10 @@ a:visited {
     justify-content: center;
 }
 
+.members-group-section a:active {
+    background-color: transparent;
+}
+
 .members-group-section * {
     width: 90%;
     height: 100%;
