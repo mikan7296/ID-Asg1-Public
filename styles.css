@@ -379,7 +379,6 @@ a:visited {
 
 .concerts-body {
     width: 100%;
-    overflow-y: hidden;
 
 }
 
@@ -387,7 +386,6 @@ a:visited {
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow-y: hidden;
 
 }
 
