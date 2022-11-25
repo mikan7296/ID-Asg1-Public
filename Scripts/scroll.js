@@ -11,8 +11,7 @@
 // })
 
 $(window).scroll(function() {
-    console.log($(window).scrollTop());
-    if ($(window).scrollTop() > 200) {
+    if ($(window).scrollTop() > 150) {
         $('.canScroll').addClass('active-header');
     }
     else {

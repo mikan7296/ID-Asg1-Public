@@ -1,8 +1,6 @@
 * {
     box-sizing: border-box;
-    
 }
-
 
 html {
     max-width: 100%;
@@ -39,16 +37,22 @@ a:visited {
     justify-content:flex-end;
     align-items: center;
     
+    background-color: grey;
 
+    transition: background-color .3s linear;
+}
+
+#header.canScroll {
     position: fixed;
     top: 0;
 
-    transition: background-color .5s linear;
+    background-color: transparent;
+
 }
 
 
 #header.active-header {
-    background-color: greenyellow;
+    background-color: grey;
 }
 
 .navitem {
@@ -75,9 +79,12 @@ a:visited {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    
 }
 
+#banner.downsized {
+    background-size: cover;
+    height: 30vh;
+    background-position: center calc(50% + 5vh)}
 
 .banner-text {
     display: flex;
@@ -218,7 +225,6 @@ a:visited {
     width: 34%;
 
     position: absolute;
-    top:100px;
     left: 0%;
 
     z-index: -1;
