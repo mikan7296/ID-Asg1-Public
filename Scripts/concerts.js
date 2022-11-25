@@ -33,7 +33,7 @@ const liveConcerts = [
         links: {
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_CYR.php",
         },
-        tags: ["CYaRon!", "Live"],
+        tags: ["CYaRon", "Live"],
         src: "Media/concert_images/CYR_2ND.png"
     },
     {
@@ -73,8 +73,17 @@ const liveConcerts = [
     }
 ]
 
-let container = document.getElementById("123w123")
+const filters = {
+    "aqours-filter" : false,
+    "cyaron-filter" : false,
+    "guiltykiss-filter" : false,
+    "azalea-filter" : false,
+    "live-filter" : false,
+    "online-filter" : false,
+}
 
+let container = document.getElementById("123w123")
+container.innerHTML = ""
 function makeElementpls(name,
     parent,
     classToAdd=false,
@@ -116,13 +125,65 @@ for (let i = 0; i < liveConcerts.length; i++) {
     for (let i = 0; i < tags.length; i++) {
         let tag = document.createElement("div")
         tag.classList.add("tag")
+        tag.classList.add(tags[i].toLowerCase().replace(" ","") + "-filter")
         tag.innerHTML = tags[i]
         postTags.appendChild(tag)
     }
     
-    for (let [key, value] of Object.entries(links)) {
+    for (let key in links) {
+        value = links[key]
         key = key.toString().replace("_"," ")
         let link = makeElementpls("a",supportButtons,false,key,false,value)
+    }
+}
 
+
+$(".filter-button").click(function() {
+    
+    if (filters[this.id]) {
+        filters[this.id] = false
+        this.classList.remove("active")
+    }
+    else {
+        filters[this.id] = true
+        this.classList.add("active")
+    }
+    updateConcertList()
+})
+
+
+function updateConcertList() {
+    let toShow = []
+    let toHide = []
+    for (let key in filters) {
+        value = filters[key]
+        if (value) {
+            toShow.push("."+key)
+        } else {
+            toHide.push("."+key)
+        }
+    }
+
+    for (let i = 0; i < toHide.length; i++) {
+        let tags = document.querySelectorAll(toHide[i])
+        for (let i = 0; i < tags.length; i++) {
+            parentsCL = tags[i].parentElement.parentElement.classList
+            parentsCL.add("hidden")
+        }
+    }
+
+    for (let i = 0; i < toShow.length; i++) {
+        let tags = document.querySelectorAll(toShow[i])
+        for (let i = 0; i < tags.length; i++) {
+            parentsCL = tags[i].parentElement.parentElement.classList
+            parentsCL.remove("hidden")
+        }
+    }
+
+    if (toShow.length == 0) {
+        let posts = document.querySelectorAll(".post")
+        for (let i = 0; i < posts.length; i++) {
+            posts[i].classList.remove("hidden")
+        }
     }
 }

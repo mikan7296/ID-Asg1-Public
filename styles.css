@@ -412,11 +412,19 @@ a:visited {
 .filter-button {
     width: 100%;
     height: 5vh;
-    background-color: rgb(155, 199, 238);
+    background-color: rgb(255, 255, 255);;
     
     border-radius: 20px;
     padding: 1vh;
-    margin: 0 0 10px 0;
+    margin:0 0 10px 0;
+
+    text-align: center;
+
+    transition: background-color 0.1s linear;
+}
+
+.filter-button.active {
+    background-color: rgb(155, 199, 238);
 }
 
 .post {
@@ -429,6 +437,10 @@ a:visited {
 
     padding: 20px;
     border-radius: 20px;
+}
+
+.post.hidden {
+    display: none;
 }
 
 .post-title {
@@ -497,6 +509,12 @@ a:visited {
 
 
 /* not done yet */
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: lightgray;
+}
 
 @media only screen and (max-width:920px) {
     .member-inner-container {
