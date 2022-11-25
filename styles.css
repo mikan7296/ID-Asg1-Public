@@ -84,7 +84,7 @@ a:visited {
 #banner.downsized {
     background-size: cover;
     height: 30vh;
-    background-position: center calc(50% + 5vh)}
+    background-position: center calc(50% + 100px)}
 
 .banner-text {
     display: flex;
@@ -374,6 +374,7 @@ a:visited {
     z-index: 100;
 }
 
+/* POSTS - Page Title */
 
 /* not done yet */
 
@@ -382,3 +383,4 @@ a:visited {
         width: 100%;
     }
 }
+
