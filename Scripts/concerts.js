@@ -3,32 +3,75 @@ const liveConcerts = [
         name: "Love Live! Sunshine!! Aqours 6th LoveLive! ~KU-RU-KU-RU Rock 'n' Roll TOUR~",
         desc: "Aqours 6th LoveLive! ~KU-RU-KU-RU Rock 'n' Roll TOUR~ is a concert held at 3 locations.",
         links: {
-            Windy : "https://www.lovelive-anime.jp/uranohoshi/cd2.php#cd44",
-            Sunny : "https://www.lovelive-anime.jp/uranohoshi/cd2.php#cd40",
-            Ocean : "https://www.lovelive-anime.jp/uranohoshi/cd2.php#cd39"},
-        tags: ["live","aqours"],
-        src: "Media/kv.png"
+            Windy_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive_w.php",
+            Sunny_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive.php",
+            Ocean_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive.php"},
+        tags: ["Aqours","Live"],
+        src: "Media/concert_images/AQ_6TH.png"
+    },
+    {
+        name: "Love Live! Sunshine!! Aqours EXTRA LoveLive! ~DREAMY CONCERT 2021~",
+        desc: "a",
+        links: {
+            Website: "https://www.lovelive-anime.jp/uranohoshi/sp_extra2021.php",
+        },
+        tags: ["Aqours","Live"],
+        src: "Media/concert_images/DC2021.png"
+    },
+    {
+        name: "Love Live! Sunshine!! AZALEA 2nd LoveLive! ~Amazing Travel DNA Reboot~",
+        desc: "a",
+        links: {
+            Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_AZ2.php",
+        },
+        tags: ["AZALEA", "Live"],
+        src: "Media/concert_images/AZL_2ND.png"
+    },
+    {   
+        name: "Love Live! Sunshine!! CYaRon! 2nd LoveLive! ~Dai Kakumei☆Wake Up Kingdom~",
+        desc: "a",
+        links: {
+            Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_CYR.php",
+        },
+        tags: ["CYaRon!", "Live"],
+        src: "Media/concert_images/CYR_2ND.png"
+    },
+    {
+        name: "Love Live! Sunshine!! Guilty Kiss 2nd LoveLive! ~Return To Love ♡ Kiss Kiss Kiss~",
+        desc: "a",
+        links: {
+            Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_GK.php",
+        },
+        tags: ["Guilty Kiss", "Live"],
+        src: "Media/concert_images/GK_2ND.png"
+    },
+    {
+        name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! ",
+        desc: "a",
+        links: {
+            Website: "https://lovelive-anime.jp/uranohoshi/sp_countdown.php",        },
+        tags: ["Aqours", "Online"],
+        src: "Media/concert_images/AQ_WI.png"
+    },
+    {
+        name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! ",
+        desc: "a",
+        links: {
+            Website: "https://www.lovelive-anime.jp/uranohoshi/sp_onlinelive.php",
+        },
+        tags: ["Aqours", "Online"],
+        src: "Media/concert_images/AQ_LW.png"
+    },
+    {
+        name: "Love Live! Sunshine!! Aqours 5th LoveLive! ~Next SPARKLING!!~",
+        desc: "a",
+        links: {
+            Website: "https://www.lovelive-anime.jp/uranohoshi/sp_5thlive.php",
+        },
+        tags: ["Aqours", "Live"],
+        src: "Media/concert_images/AQ_5TH.png"
     }
 ]
-
-
-// for (const [ key, value ] of Object.entries(liveConcerts[0].links)) {
-//     console.log (key,value)
-// }
-
-template = `<div class="post">
-        <h3 class="post-title">Concert 1</h3>
-        <div class="post-tags">
-            <div class="tag">Tag 1</div>
-        </div>
-        <div class="post-body">
-        <div class="post-body-image" >
-            <img src="Media/kv.png">
-        </div>
-        <h3>Love Live! Sunshine!! Aqours 6th LoveLive! ~KU-RU-KU-RU Rock 'n' Roll TOUR~</h3>
-        <p>Aqours 6th LoveLive! ~KU-RU-KU-RU Rock 'n' Roll TOUR~ is a concert held at 3 locations.</p>
-    </div>`
-
 
 let container = document.getElementById("123w123")
 
@@ -69,7 +112,7 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,liveConcerts[i].src)
     let postBodyH3 = makeElementpls("h3",postBody,false,name)
     let postBodyP = makeElementpls("p",postBody,false,desc)
-    let supportButtons = makeElementpls("h3",postBody,"support-buttons","Official Blu-Rays:")
+    let supportButtons = makeElementpls("h3",postBody,"support-buttons","Official Links:")
     for (let i = 0; i < tags.length; i++) {
         let tag = document.createElement("div")
         tag.classList.add("tag")
@@ -77,7 +120,8 @@ for (let i = 0; i < liveConcerts.length; i++) {
         postTags.appendChild(tag)
     }
     
-    for (const [key, value] of Object.entries(links)) {
+    for (let [key, value] of Object.entries(links)) {
+        key = key.toString().replace("_"," ")
         let link = makeElementpls("a",supportButtons,false,key,false,value)
 
     }
