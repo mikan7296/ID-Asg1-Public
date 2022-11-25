@@ -36,7 +36,8 @@ function makeElementpls(name,
     parent,
     classToAdd=false,
     innerHTML=false,
-    src=false,) {
+    src=false,
+    href=false,) {
     let element = document.createElement(name)
     if (classToAdd) {
         element.classList.add(classToAdd)
@@ -47,6 +48,9 @@ function makeElementpls(name,
     if (src) {
         element.src = src
     }
+    if (href) {
+        element.href = href
+    }
     parent.appendChild(element)
     return element
 }
@@ -55,6 +59,7 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let name = liveConcerts[i].name
     let desc = liveConcerts[i].desc
     let tags = liveConcerts[i].tags
+    let links = liveConcerts[i].links
 
     let post = makeElementpls("div",container,"post")
     let postTitle = makeElementpls("h3",post,"post-title",name) 
@@ -62,12 +67,18 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postBody = makeElementpls("div",post,"post-body")
     let postBodyImage = makeElementpls("div",postBody,"post-body-image")
     let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,liveConcerts[i].src)
-    let postBodyh3 = makeElementpls("h3",postBody,false,name)
-    let postBodyp = makeElementpls("p",postBody,false,desc)
+    let postBodyH3 = makeElementpls("h3",postBody,false,name)
+    let postBodyP = makeElementpls("p",postBody,false,desc)
+    let supportButtons = makeElementpls("h3",postBody,"support-buttons","Official Blu-Rays:")
     for (let i = 0; i < tags.length; i++) {
         let tag = document.createElement("div")
         tag.classList.add("tag")
         tag.innerHTML = tags[i]
         postTags.appendChild(tag)
+    }
+    
+    for (const [key, value] of Object.entries(links)) {
+        let link = makeElementpls("a",supportButtons,false,key,false,value)
+
     }
 }
