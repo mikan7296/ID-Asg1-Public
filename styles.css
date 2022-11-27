@@ -328,6 +328,37 @@ a:visited {
     flex:80%;
 }
 
+.member-links {
+    display: flex;
+}
+
+.member-links a {
+    height: 30px;
+    flex: 1;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.member-links a img {
+    height: 100%;
+    width: auto;
+}
+
+.member-scroll-button-container {
+    flex: 5;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+.member-scroll-button-container img {
+    height: 20px;
+    width: 30px;
+}
+
+
 /* MEMBERS.HTML - Members carousell navigation buttons */
 
 #buttons {
@@ -516,7 +547,15 @@ footer {
 
 @media only screen and (max-width:920px) {
     .member-inner-container {
-        width: 100%;
+        width: 90%;
+    }
+
+    #scroll-buttons {
+        display: none;
+    }
+
+    .member-scroll-button-container {
+        display: flex;
     }
 }
 

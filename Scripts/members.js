@@ -7,7 +7,7 @@ const members = [
     nickname: "Anchan",
     birthday: "7 Feb 1996",
     character: "Takami Chika",
-    img: "Media/aqoursclub_cast_1.png",
+    img: "Media/members/aqoursclub_cast_1.png",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const members = [
     nickname: "Rikyako",
     birthday: "8 August 1992",
     character: "Sakurauchi Riko",
-    img: "Media/aqoursclub_cast_2.png",
+    img: "Media/members/aqoursclub_cast_2.png",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const members = [
     nickname: "Suwawa",
     birthday: "2 November 1994",
     character: "Matsuura Kanan",
-    img: "Media/aqoursclub_cast_3.png",
+    img: "Media/members/aqoursclub_cast_3.png",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const members = [
     nickname: "Arisha",
     birthday: "5 February 1994",
     character: "Kurosawa Dia",
-    img: "Media/aqoursclub_cast_4.png",
+    img: "Media/members/aqoursclub_cast_4.png",
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const members = [
     nickname: "Shukashuu",
     birthday: "16 August 1996",
     character: "Watanabe You",
-    img: "Media/aqoursclub_cast_5.png",
+    img: "Media/members/aqoursclub_cast_5.png",
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ const members = [
     nickname: "Aikyan",
     birthday: "23 October 1993",
     character: "Tsushima Yoshiko",
-    img: "Media/aqoursclub_cast_6.png",
+    img: "Media/members/aqoursclub_cast_6.png",
   },
   {
     id: 7,
@@ -61,7 +61,7 @@ const members = [
     nickname: "Kin-chan",
     birthday: "25 September 1993",
     character: "Kunikida Hanamaru",
-    img: "Media/aqoursclub_cast_7.png",
+    img: "Media/members/aqoursclub_cast_7.png",
   },
   {
     id: 8,
@@ -70,7 +70,7 @@ const members = [
     nickname: "Ainya",
     birthday: "23 July 1995",
     character: "Ohara Mari",
-    img: "Media/aqoursclub_cast_8.png",
+    img: "Media/members/aqoursclub_cast_8.png",
   },
   {
     id: 9,
@@ -79,7 +79,7 @@ const members = [
     nickname: "Furirin",
     birthday: "19 February 1994",
     character: "Kurosawa Ruby",
-    img: "Media/aqoursclub_cast_9.png",
+    img: "Media/members/aqoursclub_cast_9.png",
   },
 ];
 
@@ -218,6 +218,16 @@ $('#prev-button').click(function(){
 $('#next-button').click(function(){
   scrollRight(1)
 });
+
+$('.mobile-prev-button').click(function(){
+  scrollLeft(1)
+});
+
+$('.mobile-next-button').click(function(){
+  scrollRight(1)
+});
+
+
 
 
 changeSlides()
