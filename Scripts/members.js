@@ -120,7 +120,6 @@ const animSpeed = 400;
 let width = $(window).width();
 
 $(window).resize(function() {
-  // location.reload();
   width = $(window).width();;
 });
 

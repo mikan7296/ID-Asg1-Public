@@ -83,7 +83,7 @@ const filters = {
 }
 
 let container = document.getElementById("123w123")
-container.innerHTML = ""
+// container.innerHTML = ""
 function makeElementpls(name,
     parent,
     classToAdd=false,
@@ -121,7 +121,8 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,liveConcerts[i].src)
     let postBodyH3 = makeElementpls("h3",postBody,false,name)
     let postBodyP = makeElementpls("p",postBody,false,desc)
-    let supportButtons = makeElementpls("h3",postBody,"support-buttons","Official Links:")
+    let supportText = makeElementpls("h3",postBody,false,"Official Links:")
+    let supportButtons = makeElementpls("div",postBody,"support-buttons")
     for (let i = 0; i < tags.length; i++) {
         let tag = document.createElement("div")
         tag.classList.add("tag")
