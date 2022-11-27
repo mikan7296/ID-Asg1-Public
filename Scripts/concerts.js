@@ -134,7 +134,8 @@ for (let i = 0; i < liveConcerts.length; i++) {
     for (let key in links) {
         value = links[key]
         key = key.toString().replace("_"," ")
-        let link = makeElementpls("a",supportButtons,false,key,false,value)
+        let sbinline = makeElementpls("div",supportButtons,"sbinline")
+        let link = makeElementpls("a",sbinline,false,key,false,value)
     }
 }
 

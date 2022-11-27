@@ -515,12 +515,17 @@ a:visited {
     margin: 0;
 }
 
+.sbinline {
+    margin: 1em 0 1em 0;
+    display: inline;
+}
+
 .support-buttons a{
     background-color: white;
     padding: .3em;
     border-radius: 20px;
-    
     margin: 0 10px 0 10px;
+    
 
     text-decoration: none;
     color: black;
@@ -557,5 +562,12 @@ footer {
     .member-scroll-button-container {
         display: flex;
     }
+
 }
 
+
+@media only screen and (max-width:1000px) {
+    .sbinline {
+        display: block;
+    }
+}
