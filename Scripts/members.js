@@ -8,6 +8,9 @@ const members = [
     birthday: "7 Feb 1996",
     character: "Takami Chika",
     img: "Media/members/aqoursclub_cast_1.png",
+    instagram: "https://www.instagram.com/anju_inami/",
+    twitter: "https://twitter.com/anju_inami",
+    web: "https://anjuinami.com/",
   },
   {
     id: 2,
@@ -17,6 +20,9 @@ const members = [
     birthday: "8 August 1992",
     character: "Sakurauchi Riko",
     img: "Media/members/aqoursclub_cast_2.png",
+    instagram: "https://www.instagram.com/aida_rikako_/",
+    twitter: "https://twitter.com/Rikako_Aida",
+    web: "https://rikakoaida.com/",
   },
   {
     id: 3,
@@ -26,6 +32,9 @@ const members = [
     birthday: "2 November 1994",
     character: "Matsuura Kanan",
     img: "Media/members/aqoursclub_cast_3.png",
+    instagram: "https://www.instagram.com/n.suwawagram/",
+    twitter: "https://twitter.com/suwananaka",
+    web: "https://stay-luck.com/talent/suwa-nanaka/",
   },
   {
     id: 4,
@@ -35,6 +44,9 @@ const members = [
     birthday: "5 February 1994",
     character: "Kurosawa Dia",
     img: "Media/members/aqoursclub_cast_4.png",
+    instagram: "https://www.instagram.com/arisakomiya_official/",
+    twitter: "https://twitter.com/box_komiyaarisa",
+    web: "https://komiya-arisa.net/",
   },
   {
     id: 5,
@@ -44,6 +56,9 @@ const members = [
     birthday: "16 August 1996",
     character: "Watanabe You",
     img: "Media/members/aqoursclub_cast_5.png",
+    instagram: "https://www.instagram.com/08saito_shuka16/",
+    twitter: "https://twitter.com/Saito_Shuka",
+    web: "https://ameblo.jp/shuka-saito/",
   },
   {
     id: 6,
@@ -53,6 +68,9 @@ const members = [
     birthday: "23 October 1993",
     character: "Tsushima Yoshiko",
     img: "Media/members/aqoursclub_cast_6.png",
+    instagram: "https://www.instagram.com/kyanstagram_/",
+    twitter: "https://twitter.com/aikyan_",
+    web: "https://lineblog.me/kobayashi_aika/",
   },
   {
     id: 7,
@@ -62,6 +80,9 @@ const members = [
     birthday: "25 September 1993",
     character: "Kunikida Hanamaru",
     img: "Media/members/aqoursclub_cast_7.png",
+    instagram: "https://www.instagram.com/kanako.tktk/",
+    twitter: "https://twitter.com/Kanako_tktk/",
+    web: "https://www.amuse.co.jp/artist/A8758/",
   },
   {
     id: 8,
@@ -71,6 +92,9 @@ const members = [
     birthday: "23 July 1995",
     character: "Ohara Mari",
     img: "Media/members/aqoursclub_cast_8.png",
+    instagram: "https://www.instagram.com/ainasuzuki_info/",
+    twitter: "https://twitter.com/aina_suzuki723",
+    web: "https://fc-suzukiaina.com/mob/index.php?site=SA&ima=4141",
   },
   {
     id: 9,
@@ -80,6 +104,9 @@ const members = [
     birthday: "19 February 1994",
     character: "Kurosawa Ruby",
     img: "Media/members/aqoursclub_cast_9.png",
+    instagram: "https://www.instagram.com/furihatagram/",
+    twitter: "https://twitter.com/furihata_ai",
+    web: "https://fc-furihataai.com/mob/pageShw.php?site=AI&ima=4259&cd=login_door",
   },
 ];
 
@@ -93,6 +120,7 @@ const animSpeed = 400;
 let width = $(window).width();
 
 $(window).resize(function() {
+  // location.reload();
   width = $(window).width();;
 });
 
@@ -171,6 +199,9 @@ function changeSlides() {
     $(`#${i}_birthday`).text(`${member.birthday}, ${calculateAge(member.birthday)}`);
     $(`#${i}_biography`).text(member.character);
     $(`#${i}_image`).attr('src', member.img);
+    $(`#${i}_instagram`).attr('href', member.instagram).attr('target', '_blank');
+    $(`#${i}_twitter`).attr('href', member.twitter).attr('target', '_blank');
+    $(`#${i}_web`).attr('href', member.web).attr('target', '_blank');
   }
 }
 
