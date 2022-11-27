@@ -410,7 +410,7 @@ a:visited {
 
 .concerts-body {
     width: 100%;
-
+    font-size: 2vw;
 }
 
 .concerts-body-flexbox {
@@ -422,7 +422,7 @@ a:visited {
 
 .concerts-body-section {
     display: flex;
-    width: 60%;
+    width: 80%;
 
     font-size: 150%
 }
@@ -430,6 +430,7 @@ a:visited {
 .concerts-body-main {
     flex: 3;
     flex-direction: column;
+    width: 100%;
 }
 
 .concerts-body-side {
@@ -563,10 +564,13 @@ footer {
         display: flex;
     }
 
+    .concerts-body-side {
+        display: none;
+    }
 }
 
 
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:420px) {
     .sbinline {
         display: block;
     }
