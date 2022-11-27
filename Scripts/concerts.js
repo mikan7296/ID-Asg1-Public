@@ -81,6 +81,31 @@ const filters = {
     "live-filter" : false,
     "online-filter" : false,
 }
+let debounce = false
+let filter_buttons = document.querySelectorAll(".filter-button")
+
+$(window).resize(function() {
+    width = $(window).width();;
+    if (debounce) {
+        return
+    }
+    if (width < 920) {
+        debounce = true
+        console.log(width)
+
+        for (let k in filters) {
+            filters[k] = false
+        }
+
+        for (let i = 0; i < filter_buttons.length; i++) {
+            filter_buttons[i].classList.remove("active")
+        }
+    updateConcertList()
+    setTimeout(() => {
+        debounce = false
+    }, 200)
+    }
+  });
 
 let container = document.getElementById("123w123")
 // container.innerHTML = ""
