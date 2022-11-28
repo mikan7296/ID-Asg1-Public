@@ -73,6 +73,7 @@ const liveConcerts = [
     }
 ]
 
+
 const filters = {
     "aqours-filter" : false,
     "cyaron-filter" : false,
@@ -114,7 +115,8 @@ function makeElementpls(name,
     classToAdd=false,
     innerHTML=false,
     src=false,
-    href=false,) {
+    href=false,
+    id=false) {
     let element = document.createElement(name)
     if (classToAdd) {
         // element.classList.add(classToAdd)
@@ -128,6 +130,9 @@ function makeElementpls(name,
     }
     if (href) {
         element.href = href
+    }
+    if (id) {
+        element.id = id
     }
     parent.appendChild(element)
     return element
@@ -148,7 +153,19 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postBodyH3 = makeElementpls("h3",postBody,false,name)
     let postBodyP = makeElementpls("p",postBody,false,desc)
     let gallery = makeElementpls("div",postBody,"gallery")
-    let galleryHeader = makeElementpls("h3",gallery,"gallery-header flex")
+    let galleryHeader = makeElementpls("div",gallery,"gallery-header flex")
+    let galleryTitle = makeElementpls("h3",galleryHeader,"gallery-title","Gallery")
+    let galleryButton = makeElementpls("h3",galleryHeader,"gallery-button","[Show]")
+    let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,name)
+    let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
+    let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",'name')
+    let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
+    let video = document.createElement("iframe")
+    video.src = "https://www.youtube.com/embed/WPOWDse4GHs"
+    video.width = "560"
+    video.height = "315"
+    galleryItemVideoContainer.appendChild(video)
+
     let supportText = makeElementpls("h3",postBody,false,"Official Links:")
     let supportButtons = makeElementpls("div",postBody,"support-buttons")
     for (let i = 0; i < tags.length; i++) {
