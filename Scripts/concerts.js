@@ -8,6 +8,7 @@ const liveConcerts = [
             Ocean_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive.php"},
         tags: ["Aqours","Live"],
         src: "Media/concert_images/AQ_6TH.png",
+        button_id : "0",
         preview: {
             Windy_Stage : false,
             Sunny_Stage : false,
@@ -22,6 +23,7 @@ const liveConcerts = [
         },
         tags: ["Aqours","Live"],
         src: "Media/concert_images/DC2021.png",
+        button_id : "1",
         preview : {
             Dreamy_Concert : "https://www.youtube.com/embed/eG4z8-Ay5O4"
         }
@@ -34,6 +36,7 @@ const liveConcerts = [
         },
         tags: ["AZALEA", "Live"],
         src: "Media/concert_images/AZL_2ND.png",
+        button_id : "2",
         preview : {
             AZALEA : false
         }
@@ -46,6 +49,7 @@ const liveConcerts = [
         },
         tags: ["CYaRon", "Live"],
         src: "Media/concert_images/CYR_2ND.png",
+        button_id : "3",
         preview : {
             CYaRon : "https://www.youtube.com/embed/wCxogyBGjZg"
         }
@@ -58,6 +62,7 @@ const liveConcerts = [
         },
         tags: ["Guilty Kiss", "Live"],
         src: "Media/concert_images/GK_2ND.png",
+        button_id: "4",
         preview : {
             Guilty_Kiss : "https://www.youtube.com/embed/_DzwK7w9PyU"
         }
@@ -66,9 +71,11 @@ const liveConcerts = [
         name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! ",
         desc: "a",
         links: {
-            Website: "https://lovelive-anime.jp/uranohoshi/sp_countdown.php",        },
+            Website: "https://lovelive-anime.jp/uranohoshi/sp_countdown.php",
+                },
         tags: ["Aqours", "Online"],
         src: "Media/concert_images/AQ_WI.png",
+        button_id : "5",
         preview : {
             Digest: "https://www.youtube.com/embed/eW-RvKAc_r0"
         }
@@ -81,6 +88,7 @@ const liveConcerts = [
         },
         tags: ["Aqours", "Online"],
         src: "Media/concert_images/AQ_LW.png",
+        button_id : "6",
         preview : {
             Digest: "https://www.youtube.com/embed/eW-RvKAc_r0"
         }
@@ -93,6 +101,7 @@ const liveConcerts = [
         },
         tags: ["Aqours", "Live"],
         src: "Media/concert_images/AQ_5TH.png",
+        button_id : "7",
         preview : {
             Digest: "https://youtu.be/b_2-q8eFsGM"
         }
@@ -172,8 +181,7 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let tags = liveConcerts[i].tags
     let links = liveConcerts[i].links
     let src = liveConcerts[i].src
-    let preview = liveConcerts[i].preview
-
+    let id = liveConcerts[i].button_id
     let post = makeElementpls("div",container,"post")
     let postTitle = makeElementpls("h3",post,"post-title",name) 
     let postTags = makeElementpls("div",post,"post-tags")
@@ -182,24 +190,12 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,src)
     let postBodyH3 = makeElementpls("h3",postBody,false,name)
     let postBodyP = makeElementpls("p",postBody,false,desc)
-    let gallery = makeElementpls("div",postBody,"gallery")
-    let galleryHeader = makeElementpls("div",gallery,"gallery-header flex")
+    let gallery = makeElementpls("div",postBody,"gallery",false,false,false,"gallery"+id)
+    let galleryHeader = makeElementpls("div",gallery,"gallery-header flex",false,false,false,"header"+id)
     let galleryTitle = makeElementpls("h3",galleryHeader,"gallery-title","Gallery")
-    let galleryButton = makeElementpls("h3",galleryHeader,"gallery-button","[Show]")
+    let galleryButton = makeElementpls("h3",galleryHeader,"gallery-button","[Show]",false,false,id)
 
-    // for (let key in preview) {
-    //     value = preview[key];
-    //     if (value) {
-    //         let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,name)
-    //         let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
-    //         let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",key)
-    //         let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
-    //         let video = document.createElement("iframe")
-    //         video.src = value
-    //         galleryItemVideoContainer.appendChild(video)
-    //     }
-        
-    // }
+    
    
 
     let supportText = makeElementpls("h3",postBody,false,"Official Links:")
@@ -232,6 +228,40 @@ $(".filter-button").click(function() {
         this.classList.add("active")
     }
     updateConcertList()
+})
+
+$(".gallery-button").click(function() {
+    let concert = liveConcerts[this.id]
+    let preview = concert.preview
+    let id = concert.button_id
+    let gallery = document.getElementById("gallery"+id)
+    let header = document.getElementById("header"+id)
+    if (this.classList.contains("active")) {
+        this.classList.remove("active")
+        this.innerHTML = "[Show]"
+        document.getElementById("content"+id).remove()
+
+    } 
+    else {
+        this.classList.add("active")
+        this.innerHTML = "[Hide]"
+
+        for (let key in preview) {
+            value = preview[key];
+            if (value) {
+                let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,"content"+id)
+                let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
+                let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",key)
+                let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
+                let video = document.createElement("iframe")
+                video.src = value
+                
+                galleryItemVideoContainer.appendChild(video)
+            }
+            
+        }
+    }
+    
 })
 
 

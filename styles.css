@@ -589,6 +589,9 @@ a:visited {
     flex-direction: column;
 }
 
+.hidden {
+    display: none;
+}
 
 /* not done yet */
 
