@@ -189,40 +189,33 @@ a:visited {
 
 /* MEMBERS.HTML Subunit picker  */
 
-#members-group {
+#subunits {
     width: 100%;
 }
 
 .members-group-container {
     width: 100%;
-    height: 23vh;
-    display: flex;
+    height: 15vh;
 }
 
 .members-group-section {
     flex: 1 1 0;
-    display: flex;
     justify-content: center;
 }
 
-.members-group-section a {
-    display: flex;
+.subunit-buttons {
     justify-content: center;
     cursor: default;
 }
 
-.members-group-section a:active {
-    background-color: transparent;
-}
-
 .members-group-section * {
-    width: 90%;
+    width: 95%;
     height: 100%;
 }
 
 #subunit-background {
     background-color: rgb(155, 199, 238);
-    height: 23vh;
+    height: 15vh;
     width: 34%;
 
     position: absolute;
@@ -230,14 +223,14 @@ a:visited {
 
     z-index: -1;
 
-    transition: all linear 0.2s;
+    transition: all linear 0.3s;
 }
 
 /* MEMBERS.HTML - Members carousell */
 
 #members {
     width: 100%;
-    height: 46vh;
+    height: 74vh;
 }
 
 #slides{  
@@ -267,10 +260,6 @@ a:visited {
 }
 
 .member-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     width: 100%;
     height: 100%;
 
@@ -279,57 +268,33 @@ a:visited {
 .member-inner-container {
     width:60%;
     height:70%;
-
-
-    border: 2px red solid;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: azure;
+    border-radius: 15px;
 }
 
-.member-container-image , .member-container-bio {
+.member-container-left ,
+.member-container-left img,
+.member-container-right {
     height: 100%;
 }
 
-.member-container-image img{
-    height: 100%;
-}
-
-.member-container-bio {
+.member-container-right {
     flex: 1;
-
-    display: flex;
-    flex-direction: column;
 }
 
-.member-container-bio * {
-    margin: 0;
+.member-container-right * {
+    margin-bottom: 0;
 }
 
-.member-name {
-    padding: 0 0 10px 0;
-    background-color: aliceblue;
-
-    flex:10%;
-}
-
-.member-birthday {
-    padding: 0 0 10px 0;
-    background-color: orange;
-
+.member-name,
+.member-birthday{
+    padding: 10px;
     flex:10%;
 }
 
 .member-biography {
-    margin:0;
-    background-color: rgb(80, 143, 199);
-
+    padding:10px;
     flex:80%;
-}
-
-.member-links {
-    display: flex;
 }
 
 .member-links a {
@@ -363,10 +328,8 @@ a:visited {
 
 #buttons {
     display: flex;
-    background-color: beige;
-
     justify-content: center;
-    
+    background-color: beige;
 }
 
 #buttons button {
@@ -375,8 +338,8 @@ a:visited {
     border:0;
     border-radius: 20px;
     
-    padding: 1.5vh;
-    margin: -10px 20px 10px 20px;
+    padding:1.5vh;
+    margin: 0 20px 0 20px;
 
     z-index: 100;   
 }
@@ -386,23 +349,21 @@ a:visited {
 }
 
 #scroll-buttons {
-    display: flex;
     height: 0;
     justify-content: center;
 }
 
 #scroll-buttons-container {
-    display: flex;
-    height: 46vh;
+    height: 75vh;
     width: 70%;
     justify-content: space-between;
     align-items: center;
+    
 }
 
-
 #prev-button , #next-button{
-    width: 40px;
-    height: 40px;
+    width: 3vw;
+    height: 3vh;
     z-index: 100;
 }
 
@@ -410,7 +371,6 @@ a:visited {
 
 .concerts-body {
     width: 100%;
-    /* font-size: 2vw; */
 }
 
 .concerts-body-flexbox {
@@ -480,7 +440,12 @@ a:visited {
 }
 
 .post-body-image {
-    margin: 20px 0 0 0
+    margin: 20px 0 0 0;
+}
+
+.post-body-image img {
+    width: 100%;
+    height: 100%;
 }
 
 .support-buttons a {
@@ -539,10 +504,6 @@ a:visited {
     width: 100%;
 }
 
-.fill {
-    width: 100%;
-    height: 100%;
-}
 
 .nomargin {
     margin:0 ;
@@ -593,5 +554,13 @@ footer {
         width: 100%;
         height: 100%;
         aspect-ratio: 16/9;
+    }
+
+    /* .member-inner-container {
+        flex-direction: column;
+    } */
+    .member-image,
+    .member-container-left{
+        display: none;
     }
 }

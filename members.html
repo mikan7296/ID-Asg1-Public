@@ -9,7 +9,7 @@
     <script type="text/javascript" src="Scripts/scroll.js" defer></script>
   </head>
 
-  <body  style="height:5000px">
+  <body>
     <section id="header">
       <!-- <a class="bigbutton" href="">Hello</a> -->
       <a class="navitem" href="index.html">Home</a>
@@ -19,22 +19,22 @@
       <a class="navitem" href="">Item 5</a>
     </section>
 
-    <section id="members-group">
-      <div id = "subunit-background"></div>
-      <div class="members-group-container">
+    <section id="subunits">
+      <div id="subunit-background"></div>
+      <div class="members-group-container flex">
 
-        <div class="members-group-section" id='cyaron'>
-          <a href="javascript:changeSubunit(cyaron)">
+        <div class="members-group-section flex" id='cyaron'>
+          <a class="subunit-buttons flex" href="javascript:changeSubunit(cyaron)">
             <img src="Media/CYaRon_Logo.webp"></a>
         </div>
 
         <div class="members-group-section" id='guilty_kiss'>
-          <a href="javascript:changeSubunit(guilty_kiss)">
+          <a class="subunit-buttons flex" href="javascript:changeSubunit(guilty_kiss)">
             <img src="Media/Guilty_Kiss_Logo.webp"></a>
         </div>
 
         <div class="members-group-section" id='azalea'>
-          <a href="javascript:changeSubunit(azalea)">
+          <a class="subunit-buttons flex" href="javascript:changeSubunit(azalea)">
             <img src="Media/AZALEA_Logo.webp"></a>
         </div>
         
@@ -43,27 +43,28 @@
 
     <section id="members">
 
-      <div id="scroll-buttons">
-        <div id="scroll-buttons-container">
+      <div id="scroll-buttons" class="flex">
+        <div id="scroll-buttons-container" class="flex">
           <img id="prev-button" src="Media/icons/left-arrow.png">
           <img id="next-button" src="Media/icons/right-arrow.png">
         </div>
       </div>
 
       <div id ="slides">
-        <div class="slide">
-          <div class="member-container">
-            <div class="member-inner-container">
 
-              <div class="member-container-image">
-                <img id="0_image" src="Media/Amogus.jpg" alt="Member 1">
+        <div class="slide">
+          <div class="member-container flex-center">
+            <div class="member-inner-container flex-center">
+
+              <div class="member-container-left">
+                <img class="member-image" id="0_image" src="Media/Amogus.jpg" alt="Member 1">
               </div>
 
-              <div class="member-container-bio">
-                <h1 id="0_name" class="member-name">You shouldn't be seeing this</h1>
+              <div class="member-container-right flex column">
+                <h1 id="0_name" class="member-name text-center">You shouldn't be seeing this</h1>
                 <p  id="0_birthday" class="member-birthday">You shouldn't be seeing this</p>
                 <p  id="0_biography" class="member-biography">You shouldn't be seeing this</p>
-                <div id="0_links" class="member-links"> 
+                <div id="0_links" class="member-links flex"> 
                   <a id="0_instagram"><img src="Media/Icons/instagram.png"></a>
                   <a id="0_twitter"><img src="Media/Icons/twitter.png"></a>
                   <a id="0_web"><img src="Media/Icons/link.png"></a>
@@ -74,22 +75,22 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
         
         <div class="slide">
-          <div class="member-container">
-            <div class="member-inner-container">
-              <div class="member-container-image">
-                <img id="1_image" src="Media/Amogus.jpg" alt="Member 2">
+          <div class="member-container flex-center">
+            <div class="member-inner-container flex-center">
+
+              <div class="member-container-left">
+                <img class="member-image" id="1_image" src="Media/Amogus.jpg" alt="Member 2">
               </div>
 
-              <div class="member-container-bio">
-                <h1 id="1_name" class="member-name">You shouldn't be seeing this</h1>
+              <div class="member-container-right flex column">
+                <h1 id="1_name" class="member-name text-center">You shouldn't be seeing this</h1>
                 <p id="1_birthday" class="member-birthday">You shouldn't be seeing this</p>
                 <p id="1_biography" class="member-biography">You shouldn't be seeing this</p>
-                <div id="1_links" class="member-links"> 
+                <div id="1_links" class="member-links flex"> 
                   <a id="1_instagram"><img src="Media/Icons/instagram.png"></a>
                   <a id="1_twitter"><img src="Media/Icons/twitter.png"></a>
                   <a id="1_web"><img src="Media/Icons/link.png"></a>
@@ -105,17 +106,18 @@
         </div>
         
         <div class="slide">
-          <div class="member-container">
-            <div class="member-inner-container">
-              <div class="member-container-image">
-                <img id="2_image" src="Media/Amogus.jpg" alt="Member 3">
+          <div class="member-container flex-center">
+            <div class="member-inner-container flex-center">
+
+              <div class="member-container-left">
+                <img class="member-image" id="2_image" src="Media/Amogus.jpg" alt="Member 3">
               </div>
 
-              <div class="member-container-bio">
-                <h1 id="2_name" class="member-name">You shouldn't be seeing this</h1>
+              <div class="member-container-right flex column">
+                <h1 id="2_name" class="member-name text-center">You shouldn't be seeing this</h1>
                 <p id="2_birthday" class="member-birthday">You shouldn't be seeing this</p>
                 <p id="2_biography" class="member-biography">You shouldn't be seeing this</p>
-                <div id="2_links" class="member-links"> 
+                <div id="2_links" class="member-links flex"> 
                   <a id="2_instagram"><img src="Media/Icons/instagram.png"></a>
                   <a id="2_twitter"><img src="Media/Icons/twitter.png"></a>
                   <a id="2_web"><img src="Media/Icons/link.png"></a>
