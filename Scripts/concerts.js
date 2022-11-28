@@ -236,7 +236,9 @@ $(".gallery-button").click(function() {
     if (this.classList.contains("active")) {
         this.classList.remove("active")
         this.innerHTML = "[Show]"
-        document.getElementById("content"+id).remove()
+        for (let key in preview) {
+            document.getElementById("content"+id+key).remove()
+        }
     } 
     else {
         this.classList.add("active")
@@ -244,7 +246,7 @@ $(".gallery-button").click(function() {
 
         for (let key in preview) {
             value = preview[key];
-            let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,"content"+id)
+            let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,"content"+id+key)
             let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
             let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",key)
             let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
