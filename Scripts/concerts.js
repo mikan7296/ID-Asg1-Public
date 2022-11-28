@@ -117,34 +117,36 @@ const filters = {
     "live-filter" : false,
     "online-filter" : false,
 }
-let debounce = false
+let windowResizeDebounce = false
 let filter_buttons = document.querySelectorAll(".filter-button")
 
 $(window).resize(function() {
     width = $(window).width();;
-    if (debounce) {
+    if (windowResizeDebounce) {
         return
     }
     if (width < 920) {
-        debounce = true
-        console.log(width)
-
+        windowResizeDebounce = true
+        // Disable Filters
         for (let k in filters) {
             filters[k] = false
         }
-
         for (let i = 0; i < filter_buttons.length; i++) {
             filter_buttons[i].classList.remove("active")
         }
+    // Hide Filters
     updateConcertList()
     setTimeout(() => {
-        debounce = false
+        windowResizeDebounce = false
     }, 200)
     }
   });
 
+//really unique id
 let container = document.getElementById("123w123")
-// container.innerHTML = ""
+
+
+//function to make element using document.createElement() + arguments
 function makeElementpls(name,
     parent,
     classToAdd=false,
@@ -154,8 +156,7 @@ function makeElementpls(name,
     id=false) {
     let element = document.createElement(name)
     if (classToAdd) {
-        // element.classList.add(classToAdd)
-        $(element).addClass(classToAdd)
+        $(element).addClass(classToAdd) //jquery to add multiple classes in 1 line
     }
     if (innerHTML) {
         element.innerHTML = innerHTML
@@ -182,40 +183,37 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let links = liveConcerts[i].links
     let src = liveConcerts[i].src
     let id = liveConcerts[i].button_id
-    let post = makeElementpls("div",container,"post")
-    let postTitle = makeElementpls("h3",post,"post-title",name) 
-    let postTags = makeElementpls("div",post,"post-tags")
-    let postBody = makeElementpls("div",post,"post-body")
-    let postBodyImage = makeElementpls("div",postBody,"post-body-image")
-    let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,src)
-    let postBodyH3 = makeElementpls("h3",postBody,false,name)
-    let postBodyP = makeElementpls("p",postBody,false,desc)
-    let gallery = makeElementpls("div",postBody,"gallery",false,false,false,"gallery"+id)
-    let galleryHeader = makeElementpls("div",gallery,"gallery-header flex",false,false,false,"header"+id)
-    let galleryTitle = makeElementpls("h3",galleryHeader,"gallery-title","Gallery")
-    let galleryButton = makeElementpls("h3",galleryHeader,"gallery-button","[Show]",false,false,id)
 
-    let supportText = makeElementpls("h3",postBody,false,"Official Links:")
-    let supportButtons = makeElementpls("div",postBody,"support-buttons")
-    for (let i = 0; i < tags.length; i++) {
-        let tag = document.createElement("div")
-        tag.classList.add("tag")
-        tag.classList.add(tags[i].toLowerCase().replace(" ","") + "-filter")
-        tag.innerHTML = tags[i]
-        postTags.appendChild(tag)
+    let post = makeElementpls("div",container,"post flex column fw ") // Post
+    let postTitle = makeElementpls("h3",post,"post-title nomargin",name) //Post title
+    let postTags = makeElementpls("div",post,"post-tags flex") //Post tags flex container
+    let postBody = makeElementpls("div",post,"post-body flex column") //Post body elements
+    let postBodyImageContainer = makeElementpls("div",postBody,"post-body-image") //Concert image Container
+    let postBodyImageImg = makeElementpls("img",postBodyImageContainer,"fill",false,src) //Concert image
+    let postBodyH3 = makeElementpls("h3",postBody,false,name) //Concert name
+    let postBodyP = makeElementpls("p",postBody,false,desc) //Concert description
+    let gallery = makeElementpls("div",postBody,"gallery",false,false,false,"gallery"+id) //Gallery container
+    let galleryHeader = makeElementpls("div",gallery,"gallery-header flex nomargin",false,false,false,"header"+id) //Gallery header for buttons
+    let galleryTitle = makeElementpls("h3",galleryHeader,"gallery-title","Gallery") //Gallery text
+    let galleryButton = makeElementpls("h3",galleryHeader,"gallery-button","[Show]",false,false,id) //Show/hide button
+
+    let supportText = makeElementpls("h3",postBody,false,"Official Links:") //Support text
+    let supportButtons = makeElementpls("div",postBody,"support-buttons") //Support buttons container
+
+    for (let i = 0; i < tags.length; i++) { //Add tags to container
+        let tag = makeElementpls("div",postTags,["tag",(tags[i].toLowerCase().replace(" ","") + "-filter")],tags[i])
     }
     
-    for (let key in links) {
+    for (let key in links) { //Add support links to container
         value = links[key]
-        key = key.toString().replace("_"," ")
-        // let sbinline = makeElementpls("div",supportButtons,"sbinline")
+        key = key.toString().replace("_"," ") //replace key underscores with spaces
         let link = makeElementpls("a",supportButtons,false,key,false,value)
     }
 }
 
-
+//Filters
 $(".filter-button").click(function() {
-    
+    //Toggle filters
     if (filters[this.id]) {
         filters[this.id] = false
         this.classList.remove("active")
@@ -226,53 +224,11 @@ $(".filter-button").click(function() {
     }
     updateConcertList()
 })
-
-$(".gallery-button").click(function() {
-    let concert = liveConcerts[this.id]
-    let preview = concert.preview
-    let id = concert.button_id
-    let gallery = document.getElementById("gallery"+id)
-    let header = document.getElementById("header"+id)
-    if (this.classList.contains("active")) {
-        this.classList.remove("active")
-        this.innerHTML = "[Show]"
-        for (let key in preview) {
-            document.getElementById("content"+id+key).remove()
-        }
-    } 
-    else {
-        this.classList.add("active")
-        this.innerHTML = "[Hide]"
-
-        for (let key in preview) {
-            value = preview[key];
-            let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,"content"+id+key)
-            let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
-            let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",key)
-            let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
-            if (value) {
-                
-                let video = document.createElement("iframe")
-                video.src = value
-                video.height = "315"
-                video.width = "560"
-                galleryItemVideoContainer.appendChild(video)
-            }
-            else {
-                let text = document.createElement("h3")
-                text.innerHTML = "No preview available :("
-                galleryItemVideoContainer.appendChild(text)
-            }
-            
-        }
-    }
-    
-})
-
-
+//Update the page with filters
 function updateConcertList() {
     let toShow = []
     let toHide = []
+    //Adds selected ones to toShow and non-filtered ones to toHide
     for (let key in filters) {
         value = filters[key]
         if (value) {
@@ -281,7 +237,7 @@ function updateConcertList() {
             toHide.push("."+key)
         }
     }
-
+    //Hides all in toHide
     for (let i = 0; i < toHide.length; i++) {
         let tags = document.querySelectorAll(toHide[i])
         for (let i = 0; i < tags.length; i++) {
@@ -289,7 +245,7 @@ function updateConcertList() {
             parentsCL.add("hidden")
         }
     }
-
+    //Shows all in toShow as long as the post has one of the selected tags, eg (1 hide 1 show = show)
     for (let i = 0; i < toShow.length; i++) {
         let tags = document.querySelectorAll(toShow[i])
         for (let i = 0; i < tags.length; i++) {
@@ -297,7 +253,7 @@ function updateConcertList() {
             parentsCL.remove("hidden")
         }
     }
-
+    //If all filters are disabled, show all
     if (toShow.length == 0) {
         let posts = document.querySelectorAll(".post")
         for (let i = 0; i < posts.length; i++) {
@@ -305,3 +261,41 @@ function updateConcertList() {
         }
     }
 }
+
+//Gallery toggle buttons
+$(".gallery-button").click(function() {
+    let concert = liveConcerts[this.id]
+    let preview = concert.preview
+    let id = concert.button_id
+    let gallery = document.getElementById("gallery"+id)
+    let header = document.getElementById("header"+id)
+    //If showing, hide and change text
+    if (this.innerHTML == "[Hide]") {
+        this.innerHTML = "[Show]"
+        //For each key in preview, remove the image
+        for (let key in preview) {
+            document.getElementById("content"+id+key).remove()
+        }
+    } 
+    else { //Else add and change text
+        this.innerHTML = "[Hide]"
+        //For each key in preview, add the image
+        for (let key in preview) {
+            value = preview[key];
+            let galleryItemContainer = makeElementpls("div",gallery,"text-center",false,false,false,"content"+id+key) //The container
+            let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item") //The container for individual items
+            let galleryItemName = makeElementpls("h3",galleryItem,"gallery-item-name nomargin",key.replace("_"," ")) //The name of the item
+            if (value) {
+                let video = makeElementpls("iframe",galleryItem,false,false,value)
+                video.height = "315"
+                video.width = "560"
+            }
+            else {
+                let text = makeElementpls("h4",galleryItem,"nomargin","No preview available")
+            }
+            
+        }
+    }
+    
+})
+
