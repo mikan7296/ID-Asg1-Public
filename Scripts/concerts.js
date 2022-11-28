@@ -117,7 +117,8 @@ function makeElementpls(name,
     href=false,) {
     let element = document.createElement(name)
     if (classToAdd) {
-        element.classList.add(classToAdd)
+        // element.classList.add(classToAdd)
+        $(element).addClass(classToAdd)
     }
     if (innerHTML) {
         element.innerHTML = innerHTML
@@ -146,6 +147,8 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,liveConcerts[i].src)
     let postBodyH3 = makeElementpls("h3",postBody,false,name)
     let postBodyP = makeElementpls("p",postBody,false,desc)
+    let gallery = makeElementpls("div",postBody,"gallery")
+    let galleryHeader = makeElementpls("h3",gallery,"gallery-header flex")
     let supportText = makeElementpls("h3",postBody,false,"Official Links:")
     let supportButtons = makeElementpls("div",postBody,"support-buttons")
     for (let i = 0; i < tags.length; i++) {
