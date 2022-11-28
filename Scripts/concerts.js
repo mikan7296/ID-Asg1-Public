@@ -291,7 +291,7 @@ $(".gallery-button").click(function() {
                 video.width = "560"
             }
             else {
-                let text = makeElementpls("h4",galleryItem,"nomargin","No preview available")
+                let text = makeElementpls("p",galleryItem,"nomargin","No preview available")
             }
             
         }

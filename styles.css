@@ -56,7 +56,7 @@ a:visited {
 }
 
 .navitem {
-    font-size: 150%;
+    font-size: 120%;
     color: plum;
 
     padding-right: .5em;
@@ -79,12 +79,15 @@ a:visited {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
 }
 
 #banner.downsized {
-    background-size: cover;
-    height: 30vh;
-    background-position: center calc(50% + 100px)}
+    background-image: url("Media/Aqours_Logo.webp");
+    background-attachment: scroll;
+    background-size: contain;
+    height: 20vh;
+}
 
 .banner-text {
     display: flex;
@@ -103,66 +106,39 @@ a:visited {
 }
 /* INDEX.HTML - Main Body */
 
-#team-info {
-    width: 100%;
+#team-information {
     height:46vh;
 }
 
-.team-info-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.team-info {
+    width: 70%;
+    height: 60%;
 
+    background-color: rgb(238, 255, 160);
+    padding: 2rem;
+    border-radius: 9999px;
+}
+
+.team-info-left {
+    flex: 1;
+    height: 100%;
+}
+.team-info-left > img {
     width: 100%;
     height: 100%;
 }
 
-.team-info-logo {
-
-    display: flex;
-    justify-content: flex-end;
-    
-    width:40%;
-    height:40%
-}
-
-.team-info-logo * {
+.team-info-right {
+    flex: 2;
     height: 100%;
-    padding-right:4%
 }
 
-
-.team-info-text {
-    width: 60%;
-    height: 40%;
-
-    display: flex;
-    flex-direction: column;
+.team-info-right > a {
+    padding: 1rem;
+    background-color: blanchedalmond;
+    border-radius: 9999px;
 }
 
-.team-info-text h1 {
-    margin:0;
-}
-
-.team-info-text p {
-    margin: 1em 0 0 0;
-    color: green;
-}
-
-.team-info-text div {
-    display:flex;
-    align-items: flex-end;
-    flex:1 1 100%;
-
-}
-
-.team-info-text div a {
-    padding: 1vh;
-    border-radius: 20px;
-
-    color: white;
-    background-color: black;
-}
 
 /* INDEX.HTML - News feed */
 
@@ -266,7 +242,7 @@ a:visited {
 }
 
 .member-inner-container {
-    width:60%;
+    width:80%;
     height:70%;
     background-color: azure;
     border-radius: 15px;
@@ -279,6 +255,9 @@ a:visited {
     display: flex;
 }
 
+.member-image {
+    width: 100%;
+}
 
 .member-image-mobile {
     display: none;
@@ -287,11 +266,11 @@ a:visited {
 
 
 .member-container-left {
-    flex: 35%
+    flex: 40%
 }
 
 .member-container-right {
-    flex: 65%;
+    flex: 60%;
 }
 
 .member-container-right * {
@@ -362,7 +341,7 @@ a:visited {
 
 #scroll-buttons-container {
     height: 75vh;
-    width: 70%;
+    width: 90%;
     justify-content: space-between;
     align-items: center;
     
@@ -389,7 +368,7 @@ a:visited {
 
 .concerts-body-section {
     display: flex;
-    width: 60%;
+    width: 80%;
     font-size: 150%;
 
 }
@@ -401,8 +380,8 @@ a:visited {
 }
 
 .concerts-body-side {
-    margin-left: 30px;
     flex: 1;
+    margin-left: 30px;
     flex-direction: column;
 }
 
