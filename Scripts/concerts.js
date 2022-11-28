@@ -195,9 +195,6 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let galleryTitle = makeElementpls("h3",galleryHeader,"gallery-title","Gallery")
     let galleryButton = makeElementpls("h3",galleryHeader,"gallery-button","[Show]",false,false,id)
 
-    
-   
-
     let supportText = makeElementpls("h3",postBody,false,"Official Links:")
     let supportButtons = makeElementpls("div",postBody,"support-buttons")
     for (let i = 0; i < tags.length; i++) {
@@ -240,7 +237,6 @@ $(".gallery-button").click(function() {
         this.classList.remove("active")
         this.innerHTML = "[Show]"
         document.getElementById("content"+id).remove()
-
     } 
     else {
         this.classList.add("active")
@@ -248,15 +244,22 @@ $(".gallery-button").click(function() {
 
         for (let key in preview) {
             value = preview[key];
+            let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,"content"+id)
+            let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
+            let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",key)
+            let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
             if (value) {
-                let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,"content"+id)
-                let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
-                let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",key)
-                let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
+                
                 let video = document.createElement("iframe")
                 video.src = value
-                
+                video.height = "315"
+                video.width = "560"
                 galleryItemVideoContainer.appendChild(video)
+            }
+            else {
+                let text = document.createElement("h3")
+                text.innerHTML = "No preview available :("
+                galleryItemVideoContainer.appendChild(text)
             }
             
         }
