@@ -119,12 +119,16 @@ const animSpeed = 400;
 
 let width = $(window).width();
 
-$(window).resize(function() {
-  width = $(window).width();;
-});
-
 let slidePosition = 1;
 let currentSubunit = cyaron;
+
+$(window).resize(function() {
+  width = $(window).width();;
+  scrollLeft(Infinity);
+  slidePosition = 1;
+  updateActiveButtons()
+});
+
 
 let debounce = false;
 
@@ -198,6 +202,7 @@ function changeSlides() {
     $(`#${i}_birthday`).text(`${member.birthday}, ${calculateAge(member.birthday)}`);
     $(`#${i}_biography`).text(member.character);
     $(`#${i}_image`).attr('src', member.img);
+    $(`#${i}_image_mobile`).attr('src', member.img);
     $(`#${i}_instagram`).attr('href', member.instagram).attr('target', '_blank');
     $(`#${i}_twitter`).attr('href', member.twitter).attr('target', '_blank');
     $(`#${i}_web`).attr('href', member.web).attr('target', '_blank');
