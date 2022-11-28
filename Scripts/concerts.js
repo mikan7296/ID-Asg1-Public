@@ -7,7 +7,12 @@ const liveConcerts = [
             Sunny_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive.php",
             Ocean_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive.php"},
         tags: ["Aqours","Live"],
-        src: "Media/concert_images/AQ_6TH.png"
+        src: "Media/concert_images/AQ_6TH.png",
+        preview: {
+            Windy_Stage : false,
+            Sunny_Stage : false,
+            Ocean_Stage : "https://www.youtube.com/embed/WPOWDse4GHs"
+        }
     },
     {
         name: "Love Live! Sunshine!! Aqours EXTRA LoveLive! ~DREAMY CONCERT 2021~",
@@ -16,7 +21,10 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_extra2021.php",
         },
         tags: ["Aqours","Live"],
-        src: "Media/concert_images/DC2021.png"
+        src: "Media/concert_images/DC2021.png",
+        preview : {
+            Dreamy_Concert : "https://www.youtube.com/embed/eG4z8-Ay5O4"
+        }
     },
     {
         name: "Love Live! Sunshine!! AZALEA 2nd LoveLive! ~Amazing Travel DNA Reboot~",
@@ -25,7 +33,10 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_AZ2.php",
         },
         tags: ["AZALEA", "Live"],
-        src: "Media/concert_images/AZL_2ND.png"
+        src: "Media/concert_images/AZL_2ND.png",
+        preview : {
+            AZALEA : false
+        }
     },
     {   
         name: "Love Live! Sunshine!! CYaRon! 2nd LoveLive! ~Dai Kakumei☆Wake Up Kingdom~",
@@ -34,7 +45,10 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_CYR.php",
         },
         tags: ["CYaRon", "Live"],
-        src: "Media/concert_images/CYR_2ND.png"
+        src: "Media/concert_images/CYR_2ND.png",
+        preview : {
+            CYaRon : "https://www.youtube.com/embed/wCxogyBGjZg"
+        }
     },
     {
         name: "Love Live! Sunshine!! Guilty Kiss 2nd LoveLive! ~Return To Love ♡ Kiss Kiss Kiss~",
@@ -43,7 +57,10 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_GK.php",
         },
         tags: ["Guilty Kiss", "Live"],
-        src: "Media/concert_images/GK_2ND.png"
+        src: "Media/concert_images/GK_2ND.png",
+        preview : {
+            Guilty_Kiss : "https://www.youtube.com/embed/_DzwK7w9PyU"
+        }
     },
     {
         name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! ",
@@ -51,7 +68,10 @@ const liveConcerts = [
         links: {
             Website: "https://lovelive-anime.jp/uranohoshi/sp_countdown.php",        },
         tags: ["Aqours", "Online"],
-        src: "Media/concert_images/AQ_WI.png"
+        src: "Media/concert_images/AQ_WI.png",
+        preview : {
+            Digest: "https://www.youtube.com/embed/eW-RvKAc_r0"
+        }
     },
     {
         name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! ",
@@ -60,7 +80,10 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_onlinelive.php",
         },
         tags: ["Aqours", "Online"],
-        src: "Media/concert_images/AQ_LW.png"
+        src: "Media/concert_images/AQ_LW.png",
+        preview : {
+            Digest: "https://www.youtube.com/embed/eW-RvKAc_r0"
+        }
     },
     {
         name: "Love Live! Sunshine!! Aqours 5th LoveLive! ~Next SPARKLING!!~",
@@ -69,7 +92,10 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_5thlive.php",
         },
         tags: ["Aqours", "Live"],
-        src: "Media/concert_images/AQ_5TH.png"
+        src: "Media/concert_images/AQ_5TH.png",
+        preview : {
+            Digest: "https://youtu.be/b_2-q8eFsGM"
+        }
     }
 ]
 
@@ -138,33 +164,43 @@ function makeElementpls(name,
     return element
 }
 
+
+
 for (let i = 0; i < liveConcerts.length; i++) {
     let name = liveConcerts[i].name
     let desc = liveConcerts[i].desc
     let tags = liveConcerts[i].tags
     let links = liveConcerts[i].links
+    let src = liveConcerts[i].src
+    let preview = liveConcerts[i].preview
 
     let post = makeElementpls("div",container,"post")
     let postTitle = makeElementpls("h3",post,"post-title",name) 
     let postTags = makeElementpls("div",post,"post-tags")
     let postBody = makeElementpls("div",post,"post-body")
     let postBodyImage = makeElementpls("div",postBody,"post-body-image")
-    let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,liveConcerts[i].src)
+    let postBodyImageImg = makeElementpls("img",postBodyImage,false,false,src)
     let postBodyH3 = makeElementpls("h3",postBody,false,name)
     let postBodyP = makeElementpls("p",postBody,false,desc)
     let gallery = makeElementpls("div",postBody,"gallery")
     let galleryHeader = makeElementpls("div",gallery,"gallery-header flex")
     let galleryTitle = makeElementpls("h3",galleryHeader,"gallery-title","Gallery")
     let galleryButton = makeElementpls("h3",galleryHeader,"gallery-button","[Show]")
-    let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,name)
-    let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
-    let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",'name')
-    let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
-    let video = document.createElement("iframe")
-    video.src = "https://www.youtube.com/embed/WPOWDse4GHs"
-    video.width = "560"
-    video.height = "315"
-    galleryItemVideoContainer.appendChild(video)
+
+    // for (let key in preview) {
+    //     value = preview[key];
+    //     if (value) {
+    //         let galleryItemContainer = makeElementpls("div",gallery,"flex-column center",false,false,false,name)
+    //         let galleryItem = makeElementpls("div",galleryItemContainer,"gallery-item")
+    //         let galleryItemName = makeElementpls("h4",galleryItem,"gallery-item-name",key)
+    //         let galleryItemVideoContainer = makeElementpls("div",galleryItem,"flex-center")
+    //         let video = document.createElement("iframe")
+    //         video.src = value
+    //         galleryItemVideoContainer.appendChild(video)
+    //     }
+        
+    // }
+   
 
     let supportText = makeElementpls("h3",postBody,false,"Official Links:")
     let supportButtons = makeElementpls("div",postBody,"support-buttons")
