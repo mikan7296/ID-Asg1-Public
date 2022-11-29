@@ -16,7 +16,6 @@ body{
     max-width: 100%;
     overflow: hidden;
 
-    background-color: palegoldenrod;
     font-family: Roboto, sans-serif;
 }
 
@@ -118,63 +117,67 @@ a:visited {
 }
 /* INDEX.HTML - Main Body */
 
-#team-information {
-    height:72vh;
+#team-advert {
+    height:max-content;
+    width: 100%;
+    margin: 60px 0 60px 0;
 }
 
-.team-info {
+.team-advert {
     width: 70%;
-    height: 60%;
 
-    background-color: rgb(238, 255, 160);
     padding: 2rem;
+    background-color: paleturquoise;
     border-radius: 30px;
 }
 
-.team-info-left {
-    flex: 1;
-    height: 100%;
+.team-advert-header {
+    margin: 0 auto
 }
+
+.team-advert-header *{
+    max-height: 100%;
+    padding: 3px;
+}
+
 
 #team-logo {
-    width: 70%;
-    height: 70%;
-}
-
-.team-info-right {
-    flex: 2;
-    height: 100%;
-}
-
-.team-info-right > a {
-    padding: 1rem;
-    background-color: blanchedalmond;
-    border-radius: 9999px;
-}
-
-
-/* INDEX.HTML - News feed */
-
-#newsfeed {
-    width: 100%;
-    height:92vh;
-    background-color:pink;
-
+    width: 2rem;
+    height: 2rem;
+    border-radius: 10px;
     
 }
 
-.newsfeed-container {
-    height: 100%;
-    display: flex;
+#meet-team {
+    position: relative;
+    top: 0;
+    width: 60%;
+    padding: 1rem;
+    color: #000000;
+    background-color: white;
+    border-radius: 30px;
+
+    margin: auto auto 0 auto;
+
+    transition: background-color .3s linear;
+    transition: top .3s ease;
 }
 
-.newsfeed-section {
-    flex: 1 1 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#meet-team:hover {
+    top:-4px;
+    background-color: turquoise;
 }
+
+
+
+
+/* INDEX.HTML - Members Advert */
+
+#members-advert {
+    width: 100%;
+    height:92vh;
+}
+
 
 /* MEMBERS.HTML Subunit picker  */
 
