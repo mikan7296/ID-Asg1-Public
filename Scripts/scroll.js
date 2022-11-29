@@ -18,3 +18,11 @@ $(window).scroll(function() {
         $('.canScroll').removeClass('active-header');
     }
 });
+
+$("#team-logo").hover(function() {
+    logo = document.getElementById("team-logo")
+    logo.src = "Media/twerk.gif";
+}, function () {
+   logo.src = "Media/Amogus.jpg";
+    
+})
