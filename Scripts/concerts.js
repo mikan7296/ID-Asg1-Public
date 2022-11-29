@@ -100,10 +100,10 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_5thlive.php",
         },
         tags: ["Aqours", "Live"],
-        src: "Media/concert_images/AQ_5TH.png",
+        src: "Media/concert_images/AQ_5TH.jpg",
         button_id : "7",
         preview : {
-            Digest: "https://youtu.be/b_2-q8eFsGM"
+            Digest: "https://www.youtube.com/embed/b_2-q8eFsGM"
         }
     }
 ]
@@ -189,7 +189,7 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postTags = makeElementpls("div",post,"post-tags flex") //Post tags flex container
     let postBody = makeElementpls("div",post,"post-body flex column") //Post body elements
     let postBodyImageContainer = makeElementpls("div",postBody,"post-body-image") //Concert image Container
-    let postBodyImageImg = makeElementpls("img",postBodyImageContainer,false,false,src) //Concert image
+    let postBodyImageImg = makeElementpls("img",postBodyImageContainer,("fw fh"),false,src) //Concert image
     let postBodyH3 = makeElementpls("h3",postBody,false,name) //Concert name
     let postBodyP = makeElementpls("p",postBody,false,desc) //Concert description
     let gallery = makeElementpls("div",postBody,"gallery",false,false,false,"gallery"+id) //Gallery container
