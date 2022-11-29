@@ -14,7 +14,10 @@ body{
     font-weight: 500;
 
     max-width: 100%;
-    overflow: hidden
+    overflow: hidden;
+
+    background-color: palegoldenrod;
+    font-family: Roboto, sans-serif;
 }
 
 a {
@@ -116,7 +119,7 @@ a:visited {
 /* INDEX.HTML - Main Body */
 
 #team-information {
-    height:46vh;
+    height:72vh;
 }
 
 .team-info {
@@ -125,7 +128,7 @@ a:visited {
 
     background-color: rgb(238, 255, 160);
     padding: 2rem;
-    border-radius: 9999px;
+    border-radius: 30px;
 }
 
 .team-info-left {
@@ -133,9 +136,9 @@ a:visited {
     height: 100%;
 }
 
-.team-info-left > img {
-    width: 100%;
-    height: 100%;
+#team-logo {
+    width: 70%;
+    height: 70%;
 }
 
 .team-info-right {
@@ -476,7 +479,6 @@ a:visited {
 /* AAAAAAAAAAAAAAAAAAA */
 
 #team-container {
-    width: 100%;
     height: 90vh;
     background-color: paleturquoise;
 }
@@ -488,19 +490,12 @@ a:visited {
 
 .team-member-left {
     flex: 1;
-    height: 100%;
-}
-
-.team-member-left > img {
-    height: 100%;
-    width: 100%;
 }
 
 .team-member-right {
     flex: 2;
     height: 100%;
 }
-
 
 
 .flex {
@@ -530,6 +525,9 @@ a:visited {
     width: 100%;
 }
 
+.fh {
+    height: 100%;
+}
 
 .nomargin {
     margin:0 ;

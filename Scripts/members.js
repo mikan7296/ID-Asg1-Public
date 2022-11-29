@@ -272,3 +272,6 @@ $("img").mousedown(function(){
   return false;
 });
 
+$(".member-image").click(function (){
+  $(this).attr("display", "block");
+});
