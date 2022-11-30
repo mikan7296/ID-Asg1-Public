@@ -14,7 +14,6 @@ body{
     font-weight: 500;
     max-width: 100%;
     overflow: hidden;
-    font-size: 1.2vmax;
     font-family: Roboto, sans-serif;
 }
 
@@ -127,7 +126,7 @@ a:visited {
 }
 
 .advert > * {
-    width: 80%;
+    width: 100%;
 }
 
 .advert-header {
@@ -546,10 +545,8 @@ a:visited {
 /* not done yet */
 
 footer {
-    height: 10vh;
+    padding: 1em;
     background-color: lightgray;
-    justify-content: space-around;
-    align-items: center;
 }
 
 /* 
@@ -608,5 +605,8 @@ footer {
     }
     .member-image-mobile {
         display: flex;
+    }
+    #concert-advert-section img {
+        display: none;
     }
 }
