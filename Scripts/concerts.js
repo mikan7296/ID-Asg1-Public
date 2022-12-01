@@ -259,6 +259,7 @@ function updateConcertList() {
         for (let i = 0; i < posts.length; i++) {
             posts[i].classList.remove("hidden")
         }
+        window.scrollTo(0, 0);
     }
 }
 
