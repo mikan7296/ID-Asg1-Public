@@ -262,7 +262,7 @@ function updateConcertList() {
         for (let i = 0; i < posts.length; i++) {
             posts[i].classList.remove("hidden")
         }
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
     }
 }
 
@@ -302,9 +302,6 @@ $(".gallery-button").click(function() {
     }
     
 })
-
-const mb_dropdown = document.getElementById("mobile-dropdown")
-const mb_dropdown_container = document.getElementById("mobile-dropdown-container")
 
 $("#mobile-dropdown>img").click(function() {
     $("#mobile-dropdown-container").toggleClass("hidden")
