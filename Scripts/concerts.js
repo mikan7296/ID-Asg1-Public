@@ -309,3 +309,6 @@ const mb_dropdown_container = document.getElementById("mobile-dropdown-container
 $("#mobile-dropdown>img").click(function() {
     $("#mobile-dropdown-container").toggleClass("hidden")
 });
+
+var a = JSON.stringify(liveConcerts);
+console.log(a)
