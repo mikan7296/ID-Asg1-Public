@@ -210,6 +210,7 @@ for (let i = 0; i < liveConcerts.length; i++) {
         value = links[key]
         key = key.toString().replace("_"," ") //replace key underscores with spaces
         let link = makeElementpls("a",supportButtons,false,key,false,value)
+        link.target = "_blank"
     }
 }
 
