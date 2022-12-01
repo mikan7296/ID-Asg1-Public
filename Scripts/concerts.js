@@ -11,7 +11,7 @@ const liveConcerts = [
         button_id : "0",
         preview: {
             Windy_Stage : false,
-            Sunny_Stage : false,
+            Sunny_Stage : "https://www.youtube.com/embed/wWMPFWfn_5U",
             Ocean_Stage : "https://www.youtube.com/embed/WPOWDse4GHs"
         }
     },
@@ -125,7 +125,7 @@ $(window).resize(function() {
     if (windowResizeDebounce) {
         return
     }
-    if (width < 920) {
+    if (width < 1000) {
         windowResizeDebounce = true
         // Disable Filters
         for (let k in filters) {
@@ -139,6 +139,8 @@ $(window).resize(function() {
     setTimeout(() => {
         windowResizeDebounce = false
     }, 200)
+    } else {
+        $("#mobile-dropdown-container").addClass("hidden")
     }
   });
 
@@ -300,3 +302,9 @@ $(".gallery-button").click(function() {
     
 })
 
+const mb_dropdown = document.getElementById("mobile-dropdown")
+const mb_dropdown_container = document.getElementById("mobile-dropdown-container")
+
+$("#mobile-dropdown>img").click(function() {
+    $("#mobile-dropdown-container").toggleClass("hidden")
+});

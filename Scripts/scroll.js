@@ -24,5 +24,4 @@ $("#team-logo").hover(function() {
     logo.src = "Media/twerk.gif";
 }, function () {
    logo.src = "Media/Amogus.jpg";
-    
 })
