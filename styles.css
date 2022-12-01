@@ -45,7 +45,6 @@ a:visited {
 #header.canScroll {
     position: fixed;
     top: 0;
-
     background-color: transparent;
 
 }
@@ -62,13 +61,10 @@ a:visited {
     padding-right: .5em;
 }
 
-/* .bigbutton {
-    margin-right: auto;
-    margin-left: .5em;
-    font-size: 120%;
-    color: red;
-    
-} */
+.bigbutton {
+    max-height: 8vh;
+    padding-left: 10%;
+}
 
 /* INDEX.HTML - Hero Image*/
 
