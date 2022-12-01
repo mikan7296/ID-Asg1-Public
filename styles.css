@@ -247,7 +247,7 @@ a:visited {
 }
 
 .member-inner-container {
-    width:60%;
+    width: min(60%, 1000px);
     height:80%;
     background-color: azure;
     border-radius: 15px;
@@ -549,12 +549,6 @@ footer {
     background-color: lightgray;
 }
 
-/* 
-@media only screen and (min-width:1220px) {
-    .body{
-        font-size: 1vmax
-    }
-} */
 
 @media only screen and (max-width:1000px) {
     .member-inner-container {
@@ -564,10 +558,6 @@ footer {
     #scroll-buttons {
         display: none;
     }
-
-    /* .member-container-left {
-       
-    } */
 
     .member-scroll-button-container {
         display: flex;
