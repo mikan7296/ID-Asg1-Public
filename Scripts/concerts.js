@@ -100,7 +100,7 @@ const liveConcerts = [
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_5thlive.php",
         },
         tags: ["Aqours", "Live"],
-        src: "Media/concert_images/AQ_5TH.jpg",
+        src: "Media/concert_images/AQ_5TH.png",
         button_id : "7",
         preview : {
             Digest: "https://www.youtube.com/embed/b_2-q8eFsGM"
@@ -309,6 +309,3 @@ const mb_dropdown_container = document.getElementById("mobile-dropdown-container
 $("#mobile-dropdown>img").click(function() {
     $("#mobile-dropdown-container").toggleClass("hidden")
 });
-
-var a = JSON.stringify(liveConcerts);
-console.log(a)
