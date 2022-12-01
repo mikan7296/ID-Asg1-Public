@@ -12,10 +12,10 @@
 
 $(window).scroll(function() {
     if ($(window).scrollTop() > 150) {
-        $('.canScroll').addClass('active-header');
+        $('.canscroll').addClass('active-header');
     }
     else {
-        $('.canScroll').removeClass('active-header');
+        $('.canscroll').removeClass('active-header');
     }
 });
 
