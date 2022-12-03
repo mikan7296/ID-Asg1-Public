@@ -10,7 +10,6 @@ html {
 body{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     max-width: 100%;
     overflow: hidden;
@@ -56,8 +55,13 @@ a:visited {
 
 .navitem {
     font-size: 120%;
-    color: plum;
+    font-weight: 800;
     padding-right: 1em;
+
+}
+
+.navitem:visited {
+    color: black;
 }
 
 .logo {
@@ -620,5 +624,20 @@ footer {
     }
     #concert-advert-section img {
         display: none;
+    }
+
+    
+}
+
+@media only screen and (max-width:500px) {
+    .logo-container {
+        display: none;
+    }
+
+    #header {
+        justify-content: space-around;
+    }
+    .navitem {
+        padding: 0;
     }
 }
