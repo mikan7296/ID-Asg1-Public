@@ -1,7 +1,7 @@
 const liveConcerts = [
     {
         name: "Love Live! Sunshine!! Aqours 6th LoveLive! ~KU-RU-KU-RU Rock 'n' Roll TOUR~",
-        desc: "Aqours 6th LoveLive! ~KU-RU-KU-RU Rock 'n' Roll TOUR~ is a concert held at 3 locations.",
+        desc: "Aqours 6th LoveLive! ~KU-RU-KU-RU Rock 'n' Roll TOUR~ is a concert held at Vantelin Dome, Belluna Dome and Tokyo Dome, it features the entirety of Aqours",
         links: {
             Windy_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive_w.php",
             Sunny_Stage : "https://www.lovelive-anime.jp/uranohoshi/sp_6thlive.php",
@@ -17,7 +17,7 @@ const liveConcerts = [
     },
     {
         name: "Love Live! Sunshine!! Aqours EXTRA LoveLive! ~DREAMY CONCERT 2021~",
-        desc: "a",
+        desc: "Love Live! Sunshine!! Aqours EXTRA LoveLive! ~DREAMY CONCERT 2021~ is a concert held at PIA Arena MM in Yokohama, it features the entirety of Aqours",
         links: {
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_extra2021.php",
         },
@@ -30,7 +30,7 @@ const liveConcerts = [
     },
     {
         name: "Love Live! Sunshine!! AZALEA 2nd LoveLive! ~Amazing Travel DNA Reboot~",
-        desc: "a",
+        desc: "Love Live! Sunshine!! AZALEA 2nd LoveLive! ~Amazing Travel DNA Reboot~ is a concert held at Yokohama Arena, it features the subunit AZALEA.",
         links: {
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_AZ2.php",
         },
@@ -43,7 +43,7 @@ const liveConcerts = [
     },
     {   
         name: "Love Live! Sunshine!! CYaRon! 2nd LoveLive! ~Dai Kakumei☆Wake Up Kingdom~",
-        desc: "a",
+        desc: "Love Live! Sunshine!! CYaRon! 2nd LoveLive! ~Dai Kakumei☆Wake Up Kingdom~ is a concert held at Makuhari Messe Event Hall, it features the subunit CYaRon!.",
         links: {
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_CYR.php",
         },
@@ -56,7 +56,7 @@ const liveConcerts = [
     },
     {
         name: "Love Live! Sunshine!! Guilty Kiss 2nd LoveLive! ~Return To Love ♡ Kiss Kiss Kiss~",
-        desc: "a",
+        desc: "Love Live! Sunshine!! Guilty Kiss 2nd LoveLive! ~Return To Love ♡ Kiss Kiss Kiss~ is a concert held at Tokyo Garden Theatre, it features the subunit Guilty Kiss.",
         links: {
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_unit2021_GK.php",
         },
@@ -68,8 +68,8 @@ const liveConcerts = [
         }
     },
     {
-        name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! ",
-        desc: "a",
+        name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! White Island",
+        desc: "Love Live! Sunshine!! Aqours ONLINE LoveLive! White Island is one of two online concerts performed by Aqours, it features the entirety of Aqours",
         links: {
             Website: "https://lovelive-anime.jp/uranohoshi/sp_countdown.php",
                 },
@@ -81,8 +81,8 @@ const liveConcerts = [
         }
     },
     {
-        name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! ",
-        desc: "a",
+        name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! Lost World",
+        desc: "Love Live! Sunshine!! Aqours ONLINE LoveLive! Lost World is one of two online concerts performed by Aqours, it features the entirety of Aqours",
         links: {
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_onlinelive.php",
         },
@@ -95,7 +95,7 @@ const liveConcerts = [
     },
     {
         name: "Love Live! Sunshine!! Aqours 5th LoveLive! ~Next SPARKLING!!~",
-        desc: "a",
+        desc: "Love Live! Sunshine!! Aqours 5th LoveLive! ~Next SPARKLING!!~ is a concert held at Metlife Dome, it features the entirety of Aqours",
         links: {
             Website: "https://www.lovelive-anime.jp/uranohoshi/sp_5thlive.php",
         },
@@ -193,7 +193,9 @@ for (let i = 0; i < liveConcerts.length; i++) {
     let postBodyImageContainer = makeElementpls("div",postBody,"post-body-image") //Concert image Container
     let postBodyImageImg = makeElementpls("img",postBodyImageContainer,("fw fh"),false,src) //Concert image
     let postBodyH3 = makeElementpls("h3",postBody,false,name) //Concert name
+
     let postBodyP = makeElementpls("p",postBody,false,desc) //Concert description
+
     let gallery = makeElementpls("div",postBody,"gallery",false,false,false,"gallery"+id) //Gallery container
     let galleryHeader = makeElementpls("div",gallery,"gallery-header flex nomargin",false,false,false,"header"+id) //Gallery header for buttons
     let galleryTitle = makeElementpls("h3",galleryHeader,"gallery-title","Gallery") //Gallery text
