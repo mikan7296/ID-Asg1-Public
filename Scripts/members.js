@@ -12,6 +12,8 @@ const members = [
     twitter: "https://twitter.com/anju_inami",
     web: "https://anjuinami.com/",
     colour: "rgb(245, 149, 75)",
+    subunit: "CYaRon",
+    origin: "Saitama Prefecture"
   },
   {
     id: 2,
@@ -25,6 +27,8 @@ const members = [
     twitter: "https://twitter.com/Rikako_Aida",
     web: "https://rikakoaida.com/",
     colour: "rgb(255, 135, 135)",
+    subunit: "Guilty Kiss",
+    origin: "Tokyo Prefecture"
   },
   {
     id: 3,
@@ -38,6 +42,8 @@ const members = [
     twitter: "https://twitter.com/suwananaka",
     web: "https://stay-luck.com/talent/suwa-nanaka/",
     colour: "rgb(72, 202, 172)",
+    subunit: "AZALEA",
+    origin: "Saitama Prefecture"
   },
   {
     id: 4,
@@ -51,6 +57,8 @@ const members = [
     twitter: "https://twitter.com/box_komiyaarisa",
     web: "https://komiya-arisa.net/",
     colour: "rgb(235, 94, 94)",
+    subunit: "AZALEA",
+    origin: "Tochigi Prefecture"
   },
   {
     id: 5,
@@ -64,6 +72,8 @@ const members = [
     twitter: "https://twitter.com/Saito_Shuka",
     web: "https://ameblo.jp/shuka-saito/",
     colour: "rgb(72, 177, 219)",
+    subunit: "CYaRon",
+    origin: "Saitama Prefecture"
   },
   {
     id: 6,
@@ -77,6 +87,8 @@ const members = [
     twitter: "https://twitter.com/aikyan_",
     web: "https://lineblog.me/kobayashi_aika/",
     colour: "rgb(171, 171, 171)",
+    subunit: "Guilty Kiss",
+    origin: "Kanagawa Prefecture",
   },
   {
     id: 7,
@@ -90,6 +102,8 @@ const members = [
     twitter: "https://twitter.com/Kanako_tktk/",
     web: "https://www.amuse.co.jp/artist/A8758/",
     colour: "rgb(206, 188, 33)",
+    subunit: "AZALEA",
+    origin: "Kobe, Hyogo Prefecture"
   },
   {
     id: 8,
@@ -103,6 +117,8 @@ const members = [
     twitter: "https://twitter.com/aina_suzuki723",
     web: "https://fc-suzukiaina.com/mob/index.php?site=SA&ima=4141",
     colour: "rgb(173, 73 ,221)",
+    subunit: "Guilty Kiss",
+    origin: "Hokkaido Prefecture"
   },
   {
     id: 9,
@@ -116,6 +132,8 @@ const members = [
     twitter: "https://twitter.com/furihata_ai",
     web: "https://fc-furihataai.com/mob/pageShw.php?site=AI&ima=4259&cd=login_door",
     colour: "rgb(227, 112, 185)",
+    subunit: "CYaRon",
+    origin: "Nagano Prefecture"
   },
 ];
 
@@ -209,7 +227,11 @@ function changeSlides() {
     $(`#${i}_background_clr`).css("background-color",member.colour);
     $(`#${i}_name`).text(member.name);
     $(`#${i}_birthday`).text(`${member.birthday}, ${calculateAge(member.birthday)}`);
-    $(`#${i}_biography`).text(member.character);
+
+    $(`#${i}_biography`).text(`${member.name} was born on ${member.birthday} in ${member.origin} , Japan. 
+    Her nickname is ${member.nickname} and she plays the character ${member.character}.
+    She is part of the subunit ${member.subunit}.`);
+
     $(`#${i}_image`).attr('src', member.img);
     $(`#${i}_image_mobile`).attr('src', member.img);
     $(`#${i}_instagram`).attr('href', member.instagram).attr('target', '_blank');
