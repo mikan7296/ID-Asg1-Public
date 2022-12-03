@@ -26,3 +26,7 @@ $("#team-logo").hover(function() {
    logo.src = "Media/Amogus.jpg";
 })
 
+
+$("img").mousedown(function(){
+    return false;
+});

@@ -308,3 +308,4 @@ $(".gallery-button").click(function() {
 $("#mobile-dropdown>img").click(function() {
     $("#mobile-dropdown-container").toggleClass("hidden")
 });
+

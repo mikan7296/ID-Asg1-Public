@@ -299,9 +299,6 @@ $('.mobile-next-button').click(function(){
 changeSlides()
 updateActiveButtons()
 
-$("img").mousedown(function(){
-  return false;
-});
 
 $(".member-image").click(function (){
   $(this).attr("display", "block");
