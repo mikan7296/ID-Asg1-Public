@@ -11,6 +11,7 @@ const members = [
     instagram: "https://www.instagram.com/anju_inami/",
     twitter: "https://twitter.com/anju_inami",
     web: "https://anjuinami.com/",
+    colour: "rgb(245, 149, 75)",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const members = [
     instagram: "https://www.instagram.com/aida_rikako_/",
     twitter: "https://twitter.com/Rikako_Aida",
     web: "https://rikakoaida.com/",
+    colour: "rgb(255, 135, 135)",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const members = [
     instagram: "https://www.instagram.com/n.suwawagram/",
     twitter: "https://twitter.com/suwananaka",
     web: "https://stay-luck.com/talent/suwa-nanaka/",
+    colour: "rgb(72, 202, 172)",
   },
   {
     id: 4,
@@ -47,6 +50,7 @@ const members = [
     instagram: "https://www.instagram.com/arisakomiya_official/",
     twitter: "https://twitter.com/box_komiyaarisa",
     web: "https://komiya-arisa.net/",
+    colour: "rgb(235, 94, 94)",
   },
   {
     id: 5,
@@ -59,6 +63,7 @@ const members = [
     instagram: "https://www.instagram.com/08saito_shuka16/",
     twitter: "https://twitter.com/Saito_Shuka",
     web: "https://ameblo.jp/shuka-saito/",
+    colour: "rgb(72, 177, 219)",
   },
   {
     id: 6,
@@ -71,6 +76,7 @@ const members = [
     instagram: "https://www.instagram.com/kyanstagram_/",
     twitter: "https://twitter.com/aikyan_",
     web: "https://lineblog.me/kobayashi_aika/",
+    colour: "rgb(171, 171, 171)",
   },
   {
     id: 7,
@@ -83,6 +89,7 @@ const members = [
     instagram: "https://www.instagram.com/kanako.tktk/",
     twitter: "https://twitter.com/Kanako_tktk/",
     web: "https://www.amuse.co.jp/artist/A8758/",
+    colour: "rgb(206, 188, 33)",
   },
   {
     id: 8,
@@ -95,6 +102,7 @@ const members = [
     instagram: "https://www.instagram.com/ainasuzuki_info/",
     twitter: "https://twitter.com/aina_suzuki723",
     web: "https://fc-suzukiaina.com/mob/index.php?site=SA&ima=4141",
+    colour: "rgb(173, 73 ,221)",
   },
   {
     id: 9,
@@ -107,6 +115,7 @@ const members = [
     instagram: "https://www.instagram.com/furihatagram/",
     twitter: "https://twitter.com/furihata_ai",
     web: "https://fc-furihataai.com/mob/pageShw.php?site=AI&ima=4259&cd=login_door",
+    colour: "rgb(227, 112, 185)",
   },
 ];
 
@@ -197,7 +206,7 @@ function animateSubunit() {
 function changeSlides() {
   for (let i = 0; i <= 2; i++) {
     member = members[currentSubunit[i]]
-
+    $(`#${i}_background_clr`).css("background-color",member.colour);
     $(`#${i}_name`).text(member.name);
     $(`#${i}_birthday`).text(`${member.birthday}, ${calculateAge(member.birthday)}`);
     $(`#${i}_biography`).text(member.character);
