@@ -229,7 +229,7 @@ function changeSlides() {
     $(`#${i}_birthday`).text(`${member.birthday}, ${calculateAge(member.birthday)}`);
 
     $(`#${i}_biography`).text(`${member.name} was born on ${member.birthday} in ${member.origin} , Japan. 
-    Her nickname is ${member.nickname} and she plays the character ${member.character}.
+    Her nickname is ${member.nickname} and she plays the character "${member.character}".
     She is part of the subunit ${member.subunit}.`);
 
     $(`#${i}_image`).attr('src', member.img);
