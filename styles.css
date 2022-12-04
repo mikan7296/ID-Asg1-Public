@@ -266,7 +266,7 @@ a:visited {
 }
 
 .member-inner-container {
-    width: min(60%, 1000px);
+    width: min(70%, 1000px);
     height:90%;
     background-color: gainsboro;
     border-radius: 15px;
@@ -366,7 +366,7 @@ a:visited {
 
 #scroll-buttons-container {
     height: 75vh;
-    width: 70%;
+    width: 80%;
     justify-content: space-between;
     align-items: center;
     
