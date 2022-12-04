@@ -147,13 +147,24 @@ const makenew = function () {
 }
 
 let width = $(window).width();
+let debounce = false;
 
 $(window).resize(function() {
-    width = $(window).width();;
+    if (debounce) {return}
+    debounce = true
+    scrollLeft(Infinity)
+    setTimeout(function() {
+        debounce = false;
+    }, 3000);
+    
 });
 
 function scrollRight(pages) {
 $('#slides').stop().animate({scrollLeft:"+="+(pages*width)}, 4000)
+}
+
+function scrollLeft(pages) {
+    $('#slides').stop().animate({scrollLeft:"-="+(pages*width)}, 1)
 }
 
 
