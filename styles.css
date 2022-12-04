@@ -305,6 +305,11 @@ a:visited {
     padding:10px;
     flex:80%;
     white-space: normal;
+    font-weight: 600;
+}
+
+.member-birthday {
+    font-weight: 600;
 }
 
 .member-links a {
