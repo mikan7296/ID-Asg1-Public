@@ -14,7 +14,7 @@ const liveConcerts = [
             Sunny_Stage : "https://www.youtube.com/embed/wWMPFWfn_5U",
             Ocean_Stage : "https://www.youtube.com/embed/WPOWDse4GHs"
         },
-        full_img: "Media/full/AQ_6TH.webp",
+        full_img: "Media/concert_images/full/AQ_6TH.webp",
     },
     {
         name: "Love Live! Sunshine!! Aqours EXTRA LoveLive! ~DREAMY CONCERT 2021~",
@@ -28,7 +28,7 @@ const liveConcerts = [
         preview : {
             Dreamy_Concert : "https://www.youtube.com/embed/eG4z8-Ay5O4"
         },
-        full_img: "Media/full/DC2021.webp",
+        full_img: "Media/concert_images/full/DC2021.webp",
     },
     {
         name: "Love Live! Sunshine!! AZALEA 2nd LoveLive! ~Amazing Travel DNA Reboot~",
@@ -42,7 +42,7 @@ const liveConcerts = [
         preview : {
             AZALEA : false
         },
-        full_img: "Media/full/AZL_2ND.webp",
+        full_img: "Media/concert_images/full/AZL_2ND.webp",
     },
     {   
         name: "Love Live! Sunshine!! CYaRon! 2nd LoveLive! ~Dai Kakumei☆Wake Up Kingdom~",
@@ -56,7 +56,7 @@ const liveConcerts = [
         preview : {
             CYaRon : "https://www.youtube.com/embed/wCxogyBGjZg"
         },
-        full_img: "Media/full/CYR_2ND.webp",
+        full_img: "Media/concert_images/full/CYR_2ND.webp",
     },
     {
         name: "Love Live! Sunshine!! Guilty Kiss 2nd LoveLive! ~Return To Love ♡ Kiss Kiss Kiss~",
@@ -70,7 +70,7 @@ const liveConcerts = [
         preview : {
             Guilty_Kiss : "https://www.youtube.com/embed/_DzwK7w9PyU"
         },
-        full_img: "Media/full/GK_2ND.webp",
+        full_img: "Media/concert_images/full/GK_2ND.webp",
     },
     {
         name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! White Island ",
@@ -84,7 +84,7 @@ const liveConcerts = [
         preview : {
             Digest: "https://www.youtube.com/embed/eW-RvKAc_r0"
         },
-        full_img: "Media/full/AQ_OL.webp",
+        full_img: "Media/concert_images/full/AQ_OL.webp",
     },
     {
         name: "Love Live! Sunshine!! Aqours ONLINE LoveLive! Lost World ",
@@ -98,7 +98,7 @@ const liveConcerts = [
         preview : {
             Digest: "https://www.youtube.com/embed/eW-RvKAc_r0"
         },
-        full_img: "Media/full/AQ_OL.webp",
+        full_img: "Media/concert_images/full/AQ_OL.webp",
     },
     {
         name: "Love Live! Sunshine!! Aqours 5th LoveLive! ~Next SPARKLING!!~",
@@ -112,7 +112,7 @@ const liveConcerts = [
         preview : {
             Digest: "https://www.youtube.com/embed/b_2-q8eFsGM"
         },
-        full_img: "Media/full/AQ_5TH.webp",
+        full_img: "Media/concert_images/full/AQ_5TH.webp",
     }
 ]
 let counter = 1

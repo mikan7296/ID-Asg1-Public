@@ -77,7 +77,7 @@ a:visited {
 #banner {
     height: calc(100vh - 20px);
 
-    background-image: url("Media/Aqours_artist_photo.jpg"); 
+    background-image: url("Media/aqours_images/Aqours_artist_photo.jpg"); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -85,7 +85,7 @@ a:visited {
 }
 
 #banner.concerts {
-    background-image: url("Media/Aqours_Logo.webp");
+    background-image: url("Media/aqours_images/Aqours_Logo.webp");
     background-attachment: scroll;
     background-size: contain;
     height: 20vh;
