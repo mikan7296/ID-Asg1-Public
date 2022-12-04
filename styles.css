@@ -14,7 +14,7 @@ body{
     max-width: 100%;
     overflow: hidden;
     font-family: Roboto, sans-serif;
-    font-size: 2vmax
+    font-size: 1.3vmax
 }
 
 a {
@@ -118,13 +118,19 @@ a:visited {
 
 #team-advert-section,
 #concert-advert-section {
-    margin: 2rem 0 2rem 0
+    margin: 2rem 0 2rem 0;
+}
+
+#concert-advert-section {
+    white-space: normal;
+    position: relative;
 }
 
 .advert {
     padding: 1rem;
     background-color: paleturquoise;
     width: 60%;
+    height: 100%
 }
 
 .advert > * {
@@ -241,6 +247,8 @@ a:visited {
 
   }
 
+
+
 .slide{
     position: relative;
     display: inline-block;
@@ -250,7 +258,11 @@ a:visited {
 
     margin: 0;
 
-    font-size: 2vmax;
+    font-size: 1.3vmax;
+}
+
+#slides.index {
+    height: 100%;
 }
 
 .member-inner-container {
