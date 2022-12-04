@@ -299,7 +299,3 @@ $('.mobile-next-button').click(function(){
 changeSlides()
 updateActiveButtons()
 
-
-$(".member-image").click(function (){
-  $(this).attr("display", "block");
-});

@@ -304,7 +304,7 @@ $(".gallery-button").click(function() {
     }
     
 })
-
+// Mobile Dropdown filter
 $("#mobile-dropdown>img").click(function() {
     $("#mobile-dropdown-container").toggleClass("hidden")
 });
